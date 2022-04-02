@@ -1,0 +1,335 @@
+{% extends "desinger.html" %}
+
+{% block body %}
+<div style ="margin-top: 100px;" class ="container">
+<font size = "6">
+<i>
+
+<h1>JavaScript Nedir</h1>
+<p>
+JavaScript Nedir?
+JavaScript popüler bir programlama dilidir. HTML dili ile birlikte kullanılır. İnternette, bilgisayarlarda, tabletlerde ve telefonlarda çalışır. Günümüzde JavaScript desteklemeyen bir tarayıcı kalmamıştır.
+
+Bu sayfada yer alan bilgiler, JavaScript HTML üzerinde neler yapar sorusunun yanıtıdır.
+</p>
+<br><br><br>
+<h1>Javascript HTML Elementlerini Değiştirir</h1>
+<p>
+HTML DOM, W3C uyumlu bir HTML elementleri erişim sistemidir. JavaScript HTML ile uyumlu olarak DOM'u değiştirir.
+
+Örneğin aşağıdaki örnek id="demo" olan elementin içeriğini (innerHTML) değiştirmeye yarıyor:
+</p>
+<br><br>
+<a href = "https://imgyukle.com/f/2022/02/04/o44cms.png" rek ="lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o44cms.png"></a>
+<p>Yukarıdaki document.getElementById(), JavaScript'te kullanılan yüzlerce yöntemden biridir.
+
+JavaScript kullanarak şunları yapabilirsiniz;
+</p>
+<ul>
+<li>HTML nesnelerini değiştirmek
+
+<li>HTML nesnelerini değiştirmek
+
+<li>Yeni HTML nesneleri eklemek
+
+<li>HTML nesnelerini kopyalamak
+</ul>
+<br><br>
+<h1>JavaScript Kod Yapısı</h1>
+<p>NOT: JavaScript kullanabilmek için öncelikle <a href = "/Temel-Seviye-Html">HTML</a> Dili bilmeniz gereklidir!
+
+JavaScript kodları HTML belgesi içerisinde kullanılır. Kod yazımına başlamadan önce <"script"> nesnesi eklenir ve kod yazma işlemi bittikten sonra <"/script"> yazılarak element kapatılır.</p>
+<br>
+<a href = "https://imgyukle.com/f/2022/02/04/o49nKn.png" rek = "lightbox" title="Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o49nKn.png"></a>
+<br><br>
+<h1>Javascript HTML Belgesinin Neresinde Kullanılır?</h1>
+<p><br>
+Bir JavaScript kodu için oluşturacağınız <"script"><"/script"> nesnesini <"head"> bölümünde ya da <"body"> bölümünde kullanabilirsiniz.
+
+NOT: BODY elementi içerisinde kullanmak sayfa yüklenme hızını arttıracaktır.
+
+Aşağıdaki örnek HEAD bölümünde JavaScript kullanılarak yapılmıştır;
+
+JavaScript Kodu
+
+Aşağıdaki örnek ise JavaScript kodunun BODY içerisinde kullanılmasıyla oluşturulmuştu
+</p>
+
+<a href = "https://imgyukle.com/f/2022/02/04/o49wNI.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o49wNI.png"></a>
+<br><br>
+<h1>JavaScript Kodlarını Dosyadan Kullanma</h1>
+<p><br>
+İsterseniz bir javascript dosyası oluşturarak ve bunu HTML belgenizden çağırarak kullanabilirsiniz. Bu kullanım şekli kaynak kodlarınızın sade olmasını sağlayacaktır.
+
+Bunun için <"script"> kodunuza src="" özelliği ekleyip dosya adını ana dizine göre belirtin. Örneğin script dosyamızın adı "script.js" ise;
+</p>
+<a href = "https://imgyukle.com/f/2022/02/04/o4fJRR.png" rek = "lightbox" title ="Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o4fJRR.png"></a>
+<br><br>
+<h3>NOT: Script dosyası içerisinde <script> ve </script> elementi kullanılmaz.</h3>
+<br><br><br>
+
+
+<h1>JavaScript'i Test Etmek</h1>
+<br>
+JavaScript'in yazdırma ya da çıktı verme gibi bir özelliği yoktur. JavaScript, sadece HTML Belgesinde yer alan nesneleri değiştirmek için kullanılır.
+
+getElementById() Fonksiyonu
+
+HTML nesnelerine erişmek için JavaScript'in getElementById(id) kodunu kullanırız.
+
+Yukarıdaki kodda parantez içinde yer alan id, HTML nesnesini tanımlayan bir id özelliğidir. Aşağıdaki örnekte innerHTML ise tanımlanan nesnenin içeriğidir. Aşağıdaki kodu yazarak bir HTML nesnesinin içeriğini değiştirebildik:
+<br>
+<a href = "https://imgyukle.com/f/2022/02/04/o4f8Vc.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o4f8Vc.png"></a>
+<p>
+<br>
+Yukarıdaki JavaScript kodu (<"script"> içindeki) web tarayıcısı tarafından çalıştırılır.
+
+document.getElementById("para") bir javascript kodudur ve id="para" olan HTML nesnesini seçmemize yarar.
+
+innerHTML = "Paragraf değişti"; kodu ise HTML içeriğini değiştirmeye yarar.
+</p>
+<br><br>
+<h1>HTML Belgesine Yazdırmak</h1>
+<br>
+<p>Sadece test amaçlı olarak HTML belgesine yazı yazdırmak için document.write() kodunu kullanabilirsiniz.</p>
+
+<a href="https://imgyukle.com/f/2022/02/04/o4woYh.png" rek = "lightbox" title ="Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o4woYh.png"></a>
+
+<p>
+NOT: document.write sadece test amaçlıdır.
+Yüklemesi tamamlanmış bir HTML belgesinde kullanırsanız tüm elementler sıfırlanır.
+</p>
+
+<br><br>
+<h1>Konsola Yazdırmak</h1>
+<p>
+<br>
+Eğer tarayıcınız hata ayıklama özelliğine sahipse, console.log() kodunu kullanarak JavaScript değerlerini tarayıcınızın konsol bölümünde görebilirsiniz.
+
+Konsol bölümüne erişmek ve hata ayıklamayı başlatmak için tarayıcınızda F12'ye basmalısınız.
+</p>
+
+<br><br>
+<h1>Konsola Yazdırmak</h1>
+<br>
+<p>Eğer tarayıcınız hata ayıklama özelliğine sahipse, console.log() kodunu kullanarak JavaScript değerlerini tarayıcınızın konsol bölümünde görebilirsiniz.
+
+Konsol bölümüne erişmek ve hata ayıklamayı başlatmak için tarayıcınızda F12'ye basmalısınız.
+</p>
+
+<a href = "https://imgyukle.com/f/2022/02/04/o4wGMv.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o4wGMv.png"></a>
+
+
+<h3>NOT: Hata ayıklama, bilgisayar programlama dillerindeki hataları fark etmek ve azaltmak için kullanılır.</h3>
+
+<br><br>
+<h1>JavaScript İfadeleri</h1>
+<p>
+<br>
+JavaScript ile kodlama yaparken JavaScript ifadelerinden faydalanılırız. Bu kodlar yazılırken ifadeler noktalı virgül (;) ile biter.
+</p>
+<br>
+
+<a href = "https://imgyukle.com/f/2022/02/04/o4wfwG.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o4wfwG.png"></a>
+<br><br>
+<p>
+JavaScript ifadelerinin tamamı noktalı virgül ile bitmez. IF, FUNCTION, FOR, DO gibi bazı ifadeler, ifade grupları oluşturmaya yarar. Bu tarz ifade grupları oluştururken kıvrımlı parantez kullanılır.
+</p>
+<br>
+<a href = "https://imgyukle.com/f/2022/02/04/o4w0xS.png" rek = "lightbox" title = "Örnek"><img src =" https://imgyukle.com/f/2022/02/04/o4w0xS.png"></a>
+<br><br>
+<p>
+Bazen kodlama yaparken hatırlatma ya da bilgilendirme amaçlı yazılar yazmamız gerekebilir. JavaScript buna izin verir. Bunun için tek satırlık ifadelerde // birden fazla satırlı ifadelerde ise /* ... */ kullanılır. Örneği inceleyin;
+</p>
+<a href ="https://imgyukle.com/f/2022/02/04/o40cro.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o40cro.png"></a><br><br>
+<p>
+JavaScript ifadelerini yazarken ifade, değişken ve değerler arası boşluk bırakabilir ya da bunları bitişik yazabiliriz. Aşağıdaki örnekte belirtilen her iki ifade de aynıdır.
+</p>
+<br><br>
+<h1>JavaScript Değişkenleri</h1>
+<p>
+JavaScript'te değişkenler verilerin saklandığı kelimelerdir. Bu kelimeler "var" ifadesi kullanılarak tanımlanır.
+</p>
+<br><br>
+<h1>Değişken Tanımlamak</h1>
+<p>
+Yeni bir değişken tanımlarken "var" komutundan faydalanırız. Örneğin sayısal bir ifade olarak 5 (beş) verisi içeren x adında bir değişken oluşturmak için;
+<br>
+<u>
+<hr>
+var x = 5;
+<hr>
+</u>
+</p>
+<br>
+<p>Yukarıda tanımladığımız x bir değişkendir ve değeri 5'dir.
+
+Tek bir "var" kullanarak birden fazla değişken oluşturabiliriz, bunun için tanımlanan değişkenler arasında virgül (,) konulur:
+<br>
+<u>
+<hr>
+var x = 1, y = 2, c = 3;
+<hr>
+</u>
+</p>
+<br><br>
+
+
+<b>Değişkenleri İsimlendirirken Dikkat Edilecekler:</b>
+<p>
+<ul>
+<li>Değişken adları mutlaka A-Z ya da a-z aralığında bir harf ile başlar, sayı ile başlayamaz.
+<li>Değişkenler bazı durumlarda $ ya da _ ile de başlayabilir.
+<li>Değişken adları büyük - küçük harf duyarlıdır. Yani var x = 5 ile var X = 5 farklı değişkenlerdir.
+</ul>
+</p>
+
+<br><br>
+<h1>Değişken Veri Türleri</h1>
+<br>
+<p>
+Değişkenler birçok veri türü saklayabilmektedir. Bunların başlıcaları; metin, sayısal, mantıksal, dize ve objelerdir.
+</p>
+<br>
+<br>
+
+<h1>Yazı Verisi (String)</h1>
+<p>
+<br>
+String veriler söz dizelerini depolar. Bu tarz verilerin değerlerini girerken tırnak (") ya da kesme işareti (') kullanılır.
+</p>
+<br>
+
+<p>
+<hr>
+var adi = "Murat";          // tırnak kullandık<br>
+<hr/>
+<hr>
+var soyadi = 'Elicaliskan'; // kesme işareti kullandık<br>
+<hr/>
+</p>
+<br><br>
+
+
+
+<h1>Sayısal Veri (Numbers)</h1>
+<p><br>
+Sayısal bir değeri olan değişkenler oluştururken sadece sayılardan faydalanırız. Ayrıca nokta (.) kullanarak ondalıklı sayı girişi yapabiliriz.
+<br><br>
+<hr>
+var pi = 3.14; // Ondalıklı<br>
+<hr/>
+<hr>
+var r = 5;     // Tam Sayı
+<hr/>
+</p>
+<br><br>
+
+
+<h1>Mantıksal Veri (Boolean)</h1>
+<p><br>
+Bazı değişkenler sadece iki veri içerebilir. İfade ya doğrudur (true) ya da yanlış (false).<br><br>
+<hr>
+var x = true;<br>
+<hr/>
+<hr>
+var y = false;<br>
+<hr/>
+Mantıksal veriler genellikle koşul gerektiren ifadeler için kullanılır.
+</p>
+<br><br><br>
+
+
+
+<h1>Dize Verisi (Array)</h1>
+<p><br>
+Dize, bir veri türünde birden fazla veri içeren değişken topluluğudur. Dize oluştururken köşeli parantez kullanır ve değerleri virgül ile ayırırız.
+<br><br>
+<hr>
+var arabalar = [ "Toros", "Broadway", "Megan" ]; // Yazı dizesi<br>
+<hr/>
+<hr>
+var fiyatlar = [ 5000, 10000, 15000 ]; // Sayısal dize<br>
+<hr/>
+</p>
+<br><br><br>
+
+
+<h1>Nesneler - Veri İkilileri (Object)</h1>
+<p><br>
+Nesneler, alt değişkenler ve bunların değerlerini barındıran veri türüdür. Bu alt değişkenler sıralanırken kıvrım parantezler kullanılır; isim:deger şeklinde ve virgüllerle ayrılarak yazılır.
+<br><br>
+<hr>
+var kullanici = { adi:"Murat", soyadi:"Elicaliskan" };
+<hr/>
+</p>
+<br><br><br>
+
+<h1>Boş ve Tanımsız Veriler (Undefined & Null)</h1>
+<p><br>
+Bazı değişkenlerin herhangi bir değeri yoktur, veri içermezler. Bir veri içermeyen değişken oluştururken var degisken; şeklinde yazılır. Yani eşittir (=) operatörü ile bir veri girişi yapılmaz.
+Bazen bir değişkenin sahip olduğu veriyi silmek gerekebilir. Bunun içinse null kullanılır.
+<hr>
+var isim;         // isim değişkeni veri içermez.
+<hr/>
+<hr>
+kullanici = null; // kullanici değişkeninin verisi silinir.
+<hr/>
+</p>
+<br><br><br>
+
+
+
+<h1>Veri Türünü Tespit Etmek (typeof)</h1>
+<p><br>
+typeof operatörünü kullanarak bir değişkenin türünü sorgulayabilirsiniz.
+<br><br>
+<hr>
+typeof "Murat"                // string <br>
+<hr/>
+<hr>
+typeof 3.14                   // number<br>
+<hr/>
+<hr>
+typeof false                  // boolean<br>
+<hr/>
+<hr>
+typeof [1,2,3,4]              // object<br>
+<hr/>
+<hr>
+typeof {name:'Murat', age:34} // object<br>
+<hr/>
+</p>
+<br><br><br>
+
+
+<h1>Değişkenin Veri Türünü Değiştirmek</h1>
+<p><br>
+JavaScript'in değişkenleri dinamiktir. Yani veri türleri yeni değerler atanarak kolaylıkla değiştirilebilir. Aşağıdaki örnekte x değişkeni sırasıyla tanımlanmış sonra x değişkenine sayısal veri girilmiş ve metin verisi girilmiştir;
+<br>
+<hr>
+var x;           // x'in veri türü tanımsız<br>
+<hr/>
+<hr>
+var x = 100;     // x, sayısal bir ifade oldu<br>
+<hr/>
+<hr>
+var x = "Murat"; // şimdi x, metin ifade ediyor<br>
+<hr/>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br>
+</i>
+</font>
+</div>
+{% endblock body %}

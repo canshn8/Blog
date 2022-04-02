@@ -1,0 +1,65 @@
+{% extends "desinger.html" %}
+
+{% block body %}
+<div style = "margin-top: 50px;" class = "container">
+<font size = "6">
+<h2>Pyton Range Nedir?</h2>
+<br>    
+<p>
+<hr>
+range() fonksiyonu belirli aralıkta bulunan sayıları göstermek için kullanılır.<br>
+range(5) fonksiyonu, 5'e kadar olan sayıları yani 0,1,2,3,4 değerlerini ifade eder.<br>
+range(2,5) fonksiyonu 2'den başlayıp 5'e kadar olan sayıları 2,3,4 değerlerini ifade eder.<br>
+range(2,5,2) fonksiyonu ise 2'den başlayıp 5'e kadar 2'şer artırarak devam eder, 2,4 değerlerini ifade eder.<br>
+range(başlangıç,bitiş,artış)
+<hr>
+</p>
+<br><br>
+<h3>Range Fonkiyonu Nasıl Kullanılır.</h3>
+<br>
+<p>
+<hr>
+<div class ="jumbotron">
+for i in range(5):<br>
+&nbsp;  &nbsp; &nbsp; print(i) <br>
+   
+
+#range(5) 0'dan başlayıp 5'e kadar olan sayıları(5 hariç) ifade eder<br>
+
+"""
+Bu programın çıktısı<br>
+0<br>
+1<br>
+2<br>
+3<br>
+4<br>
+"""
+</div>
+<br><br>
+
+
+
+<h4>Örnek2: range(2,5) fonksiyonu 2'den başlayıp 5'e kadar olan sayıları 2,3,4 değerlerini ifade eder.</h4>
+<div class ="jumbotron">
+</p>
+for i in range(2,5):<br>
+&nbsp;  &nbsp; &nbsp;    print(i)<br>
+
+#range(2,5) 2'den başlayıp 5'e kadar olan sayıları(5 hariç) ifade eder
+
+"""
+Bu programın çıktısı
+<br>
+2<br>
+3<br>
+4<br>
+"""
+</p>
+</div>
+<br><br><br><br>
+<p>Pythonda'ki diğer konuları görmek için &nbsp;<a href="/Python">Python</a> adresine gidin</p>
+<br><br><br><br>
+</font>
+</div>
+
+{% endblock body %}

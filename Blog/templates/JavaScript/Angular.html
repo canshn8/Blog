@@ -1,0 +1,86 @@
+{% extends "desinger.html" %}
+
+{% block body %}
+<div style = "margin-top: 50px;" class = "container">
+<font size = "6">
+<i>
+<h1>Angular </h1>
+<br><br>
+
+<ul>
+Google mühendisleri tarafından geliştirilmiştir. Hem masaüstü hem mobil web uygulamaları için uygundur ve dünya üzerinde yaygın bir kullanımı vardır. Google, Microsoft ve Forbis bu framework’ü kullananlar arasındadır. Angular’ın özellikleri;<br><br>
+<li>Yenilenen haliyle Typescript (Javascript kümesi) kullanır.<br>
+<li>SEO dostudur. Sunucu tarafında işlerin hızlı yürümesine destek verir.<br>
+<li>React’e benzer bileşen tabanlı mimari kullanır.<br>
+<li>DOM ile model arasındaki senkronizasyonu yöneten iki yönlü veri bağlama özelliğine sahiptir.<br>
+<li>Karmaşık veya katmanlı web tabanlı uygulamalarda entegrasyon performansı yüksektir.<br>
+<li>Bağımlılık enjeksiyonu, şablonlar, formlar uygulayıcı açısından kolaylık ve hız sağlar.<br>
+<li>Diğer kütüphaneler ile uyumlu çalışır.<br>
+</ul>
+<br><br>
+
+
+<h2>Bir Tane Girilen Değeri Ekrana Çıktı Olarak Veren Program Yapalım.</h2>
+<br>
+<a href="https://imgyukle.com/f/2022/02/03/obXBqH.png" rel="lightbox" title="Örnek"><img src = "https://imgyukle.com/f/2022/02/03/obXBqH.png"></a>
+<p>
+Kütüphanemizi Script Etiketleri  İçinde Dahil Ettik.<br>Bir Tane Div Açıp İçine Input Oluşturduk. Inputumuza Text Özelliği Verip Adını da Name Yaptık.Buraya Farklı Adlar da Girebilirsiniz 
+</p>
+<br><br>
+
+<p>
+Node ve Npm sistemde olması gerekenler. Sizde Yoksa npm'i Angular için Command Line Interface(CLI) aracını yüklemek maksadıyla kullanıyoruz. Kurulum için gerekli terminal komutu şöyle, 
+<br>
+<h4><code>sudo</code>&nbsp;npm<code>&nbsp;install</code>&nbsp;-g @angular/cli</h4>
+
+<br><br>
+
+
+Angular CLI ile projeyi oluşturmak oldukça basit. Önyüz tarafının görselliğini arttırmak adına Bootstrap kullanabiliriz. Tabii öncelikle ilgili bootstrap paketlerini sisteme dahil etmemiz gerekiyor. Bunu bower yöneticisinden yararlanarak aşağıdaki terminal komutu ile yapabiliriz.
+
+<h4><code>bower</code>&nbsp;i<code>&nbsp;bootstrap</code>&nbsp;</h4><br>
+Angular projesini oluşturduktan sonra bootstrap'in CSS dosyalarını assets/css altına alıp orayı referans etmeyi tercih ettim(index.html sayfasına bakın) Lakin Bootstrap için CDN adreslerini de pekala kullanabiliriz.<br>
+
+Angular Uygulamasının Oluşturulması<br>
+Angular uygulamasını hazır şablonundan üretmek oldukça kolay ve sıklıkla tercih edilen yollardan birisi. Tek yapmamız gereken terminalden ng new komunutunu çalıştırmak. new sonrası gelen parametre tahmin edileceği üzere uygulamamızın adı olacak.<br>
+
+
+<h4><code>ng</code>&nbsp;new<code>&nbsp;life-pbi-app</code>&nbsp;</h4><br>
+
+ng new sonrası oluşan proje içerisinde çok fazla dosya bulunacaktır. Şu haliyle de uygulamayı çalıştırıp sonuçlarını görebiliriz ama başta da belirttiğim üzere biraz eğip bükmek lazım. Benim yaptığım değişiklikler son derece basit. Sonuçta tek bir arayüzüm olacak ki bu index.html. Önyüzde gösterilecek bileşenimiz ise yine şablon ile hazır olarak gelen app.component. Ona ait HTML içeriğini örnek için aşağıdaki gibi değiştirebiliriz.<br>
+
+app.component.html<br>
+</p>
+<br><br>
+<a href="https://imgyukle.com/f/2022/02/03/obqxlx.png" rel="lightbox" title="Örnek"><img src = "https://imgyukle.com/f/2022/02/03/obqxlx.png"></a><br>
+<p>
+component içerisinde basit bir form grubu var. İçinde iki adet bileşen gövdesi bulunuyor. Üst taraf yeni görev girmek için kullanılan kısım. Ekle başlıklı düğmeye basıldığındaysa Typescript tarafındaki addJob metodu çağırılıyor. Parametre olarak job isimli text kontrolünün içeriği gönderilmekte.
+
+Alt tarafta yer alan gövde içindeyse bir for döngüsünden yararlanılarak tüm görev listenin basıldığı satırlar bulunuyor. Çıkart başlıklı düğmeye basıldığında devreye giren removeJob fonksiyonu parametre olarak döngünün o anki Job nesne örneğini almakta ki bunu silme işlemi için kullanıyoruz. Burada aslında güncelleme içinde bir şeyler yapmak gerekiyor. Ne var ki çalışma sırasında bunu atlamışım. Kuvvetle muhtemel üşendiğim içindir. Siz güncelleme için ayrı bir bileşene yönlendirmeyi deneyebilirsiniz(ki ben ilerleyen safhalarda Firebase ile ilgili bir kullanımı da denemişim. Magic Johnson numaralı örnek. Onu da bir ara bloğa kayıt altına almalıyım)
+
+app.component.ts (typescript tabanlı bileşenimiz) 
+</p>
+<br><br>
+<a href="https://imgyukle.com/f/2022/02/03/ob8n76.png" rel="lightbox" title="Örnek"><img src = "https://imgyukle.com/f/2022/02/03/ob8n76.png"></a>
+<p>
+Bileşenin Typescript tabanlı arka tarafı görev ekleme ve silme operasyonlarını içermekte. app-root ile ilişkilendirilmiş durumda(Bu, index.html sayfasındaki yerleşim için önemli bir bilgi) Örneğin basit olması amacıyla görev listesi uygulama çalıştığı sürece bellekte duran bir diziyi kullanıyor. Elbette bunu farklı bir veri kaynağına bağlayabiliriz. Mesela Azure Cosmos DB veya SQLite gibi veri kaynaklarının kullanılması tercih edilebilir. Son olarak ilgili bileşenin gösterildiği index.html içeriği de aşağıdaki gibi değiştirilebilir. <br><br>
+
+<a href="https://imgyukle.com/f/2022/02/03/ob8Nm1.png" rel="lightbox" title="Örnek"><img src ="https://imgyukle.com/f/2022/02/03/ob8Nm1.png"></a>
+</p>
+<h4>Uygulamayı çalıştırmak için aşağıdaki terminal komutunu vermek yeterli.<br><br>
+<hr><code>ng</code>&nbsp;server<hr>
+</h4>
+
+<p>Buna göre http://localhost:4200 adresine talep gönderirsek uygulamamıza ulaşabiliriz.Uygulamanın Çalışırken ki Görüntü &nbsp;↓</p>
+<a href="https://imgyukle.com/f/2022/02/03/ob8F9y.png" rel="lightbox" title="Örnek"><img src = "https://imgyukle.com/f/2022/02/03/ob8F9y.png"></a>
+
+
+
+</i>
+<br><br><br><br>
+<p>JavaScriptde'ki diğer konuları görmek için &nbsp;<a href="/JavaScript">JavaScript</a> adresine gidin</p>
+
+<br><br><br><br>
+</font>
+</div>
+{% endblock body %}

@@ -1,0 +1,114 @@
+{% extends "desinger.html" %}
+
+{% block body %}
+<div style = "margin-top: 100px;" class = "container">
+<font size = "5">
+<i>
+
+<h1>Bootstrap Navbar Projeye Nasıl Dahil Edilir.</h1>
+<br><br><br>
+
+<textarea disabled style ="color:white" cols="100" rows="7" >
+
+1.Kısım
+
+
+<div style ="margin-left: px20;" class = "container">
+<nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand" href="/"><font size = "6">AnaSayfa</font><i class="fas fa-home"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                        <div class="form-inline col p-0 pl-md-2 pr-md-3">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/"></a>
+                                </li>
+                                &nbsp;&nbsp;&nbsp;
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/"></a>
+                                </li>
+                                &nbsp;&nbsp;&nbsp;
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/"></a>
+                                </li>
+                                &nbsp;&nbsp;&nbsp;
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/"></a>
+                                </li>
+                                &nbsp;&nbsp;&nbsp;
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/"></a>
+                                </li>
+                                &nbsp;&nbsp;&nbsp;
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/"></a>
+                                </li>
+                                &nbsp;&nbsp;&nbsp;
+                                
+                            </ul>
+                        </font>
+                        </div>
+                        <font size ="5">    
+                        <ul class="navbar-nav">    
+                                    
+                                   
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/"></a>
+                                    </li>   
+                                      
+                                    
+                                    <br>
+                                    <li class = "nav-item">
+                                        <a class = "nav-link" href = "/"></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/"></a>
+                                    </li>
+
+                        </ul>
+                        </font>
+
+                    </div>
+                    
+</nav>
+</div>
+
+2.Kısım
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+
+
+#Html Sayfası#
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+</textarea>
+<p>
+<ul>
+<li>İlk Başta navbar.html isminde dosya oluşturulur 
+<li>1.Kısımda'ki Kodlar Yapıştırılır. 
+<li>Tasarım.html isminde başka bir dosya oluşturulur.Fakat bu html sayfası olmak zorunda(Kodların En Aşağısında Yer Almaktadır) 1.kısımda direkt olarak yapıştırmıştık
+<li>{"% include "navbar.html" %"} Yazıp  navbar.html 'in kodlarını  Tasarım.html sayfasına çağırıyoruz.
+<li>Hangi sürümünü kullandıysak 2.Kısım'da görüldüğü gibi head etiketleri arasına linki koyuyoruz.
+<li>Bundan sonrasında  actıgınız  sayfaya navbar.html ve Tasarım.html 'i dahil ediyoruz
+</ul>
+</p>
+
+
+</i>
+</font>
+</div>
+{% endblock body %}

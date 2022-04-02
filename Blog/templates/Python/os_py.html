@@ -1,0 +1,527 @@
+{% extends "desinger.html" %}
+
+{% block body %}
+ 
+<div style="margin-top: 50px;" class="container">
+<font size = "6">
+<h1>Os Modülü</h1>
+<br><br>
+
+<p>Os modülü işletim sistemini kontrol etmek için kullanılan bir modüldür.<br>Bu modül sayesinde sistemde kolayca değişiklikler yapabilirsiniz. Şimdi bunların nasıl olduğunu görelim. </p>
+<br><br><br>
+
+
+<h1>İmport Os</h1>
+<textarea disabled style ="color:white" cols="50" rows="6" >
+İmport os
+</textarea>
+<hr>
+<p>
+İlk önce 'Os' modülünü terminale veya IDE 'lerimize dahil edelim. 'import os' Os modülümüzü dahil ettik</p>
+<hr>
+<br>
+
+
+<h1>os getcwd()</h1>
+<textarea disabled style ="color:white" cols="50" rows="6" >
+>>>os.getcwd()
+C:\\Users\\pican
+</textarea>
+<hr>
+<p>
+os modülünün getcwd() fonksiyonu bize o anda içinde bulunduğumuz dizinin adını verir:
+os.getcwd()
+''C:\\Users\\'Bulunduğun Dizin'' #Windows
+</p>
+<hr>
+<br>
+
+
+
+
+
+<h1>os chdir()</h1>
+<p>
+<textarea disabled style ="color:white" cols="50" rows="6" >
+>>>os.chdir("C:\Staj Takip Sistemi 3")
+>>>os.getcwd()
+'C:\\Staj Takip Sistemi 3'
+</textarea>
+<br>
+
+
+windows'ta bir dizine geçmek için şu komutları kullanırız os.chdir("C:\Staj Takip Sistemi 3")<br>
+Bu komutu kullanarak 'Staj Takip Sistemi 3' adlı dizine geçmiş olduk.Ardından 'os.getcwd()' yazarak doğru bir şekilde geçiş yapmışmıyız diye inceledik
+Gördüğünüz gibi, gitmek istediğimiz dizin adını os.chdir() fonksiyonuna parametre olarak vermemiz yeterli oluyor.
+</p>
+<hr>
+<br>
+
+
+
+
+<h1>Os.listdir()</h1>
+<textarea disabled style ="color:white" cols="50" rows="6" >
+>>>os.chdir("C:\Staj Takip Sistemi 3")
+>>>os.listdir()
+['.vs', 'icons', 'Staj Takip Sistemi 3', 'Staj Takip Sistemi 3.sln']
+</textarea>
+<hr>
+<p>
+Az önce geçmiş olduğumuz 'Staj Takip Sistemi 3' klosörünün içindekileri nasıl listeleriz.Bunun için bir dizine geçip ardindan 'os.listdir()' yazılarak bakılır.<br>
+Listelemek istediğniz dosyaya önceden 'os.chdir' yardımıyla geçiş yapmalısınız.
+</p>
+<hr>
+<br>
+
+
+
+
+<h1>Os.curdir()</h1>
+<textarea disabled style ="color:white" cols="80" rows="6" >
+>>>os.listdir(os.getcwd())
+['.vs', 'icons', 'Staj Takip Sistemi 3', 'Staj Takip Sistemi 3.sln']
+>>>os.listdir('.')
+['.vs', 'icons', 'Staj Takip Sistemi 3', 'Staj Takip Sistemi 3.sln']
+>>>os.listdir(os.curdir)
+['.vs', 'icons', 'Staj Takip Sistemi 3', 'Staj Takip Sistemi 3.sln']
+</textarea>
+<p>
+os.getcwd() ile os.curdir’i birbirine karıştırmamalısınız. Bu ikisi aynı şey değildir. os.getcwd() çıktı olarak o anda içinde bulunduğumuz dizinin adını verir. os.curdir ise, bir işletim sisteminde, o anda içinde bulunulan dizini temsil eden karakter dizisi ne ise onun değerini barındırır. Bu değer çoğu işletim sisteminde ‘.’ adlı karakter dizisidir.
+</p>
+<hr>
+<br>
+
+
+
+
+<h1>Os.pardir()</h1>
+<textarea disabled style ="color:white" cols="80" rows="6" >
+>>>os.listdir("..")
+['All Users', 'Default', 'Default User', 'desktop.ini', 'pican', 'Public']
+>>>os.listdir(os.pardir)
+['All Users', 'Default', 'Default User', 'desktop.ini', 'pican', 'Public'
+</textarea>
+<p>
+Tıpkı ‘.’ karakter dizisi gibi, çoğu işletim sisteminde bir üst dizini göstermek için ‘..’ adlı karakter dizisi kullanılır. Örneğin:
+os.listdir('..')
+komutu, o anda içinde bulunduğunuz dizindeki değil, bir üst dizindeki dosya ve dizin adlarını listeleyecektir. Yine tıpkı os.curdir niteliğinde olduğu gibi, eğer bu karakter dizisini kendiniz elle yazmak istemezseniz, bu karakter dizisini içinde barındıran os.pardir adlı bir nitelikten yararlanabilirsiniz:
+os.listdir(os.pardir)
+Bu komut, os.listdir('..') ile aynı çıktıyı verir.
+</p>
+<hr>
+
+
+
+
+<br><br>
+<h1>Os.startfile()</h1>
+<hr>
+<textarea disabled style ="color:white" cols="50" rows="6" >
+>>>os.startfile('site.txt')
+>>>os.startfile('deneme.py')
+</textarea>
+<p>
+Yukarıdaki ilk kod site isminde txt dosyası varsa onu acıcaktır.<br>
+İkinci kod ise deneme isminde python projesi  varsa onu acıcaktır.
+<hr/>
+<br><br>
+Bu komut da deneme.docx dosyasının Microsoft Word adlı yazılımla açılmasını sağlayacaktır.<br><br>
+</p>
+<hr>
+<br>
+
+
+
+
+
+<h1>Os.mkdir()</h1>
+<textarea disabled style ="color:white" cols="50" rows="7" >
+>>>os.mkdir('dizin')
+>>>os.mkdir(r'C:\Users\pican\yenidizin')
+</textarea>
+<p>
+'os.mkdir' fonksiyonu yeni bir dizin yaratmanızı sağlar.Burda ilk başta yeni bir dizin oluşturmak istedğimiz dizine geçip sonra yeni bir dizin oluşturduk. <br>Bunu yeni bir dizine geçmeden de yapabiliriz.
+
+</p>
+<hr>
+<br>
+
+
+<h1>Os.makedirs()</h1>
+<textarea disabled style ="color:white" cols="70" rows="7" >
+>>>os.makedirs('C:/Users/pican/Desktop/form/form/form/')
+</textarea>
+<p>
+'os.makedirs' komutuyla önceden oluşturmuş olduğumuz dizine gidip içine 'form' adlı bir dizin oluşturduk.<br>
+makedirs(), mevcut değillerse tüm ara dizinleri oluşturur (tıpkı bash'deki mkdir -p gibi).
+mkdir() tek bir alt dizin oluşturabilir ve mevcut olmayan ara dizinler belirtilirse bir istisna atar.
+Her ikisi de tek bir 'yaprak' dizini (dirA) oluşturmak için kullanılabilir:
+os.mkdir('dirA')
+os.makedirs('dirA')
+Ancak 'dallar' oluşturmak için makedirs kullanılmalıdır:
+os.makedirs('dirA/dirB') çalışacak [tüm yapı oluşturulur]
+dirA zaten varsa mkdir burada çalışabilir, ancak değilse bir hata atılır.
+Bash'deki mkdir -p'den farklı olarak, yaprak zaten mevcutsa her ikisinin de başarısız olacağını unutmayın.
+</p>
+<hr>
+<br>
+
+
+<h1>Os.rename()</h1>
+<textarea disabled style ="color:white" cols="50" rows="7" >
+>>>os.rename('dizin', 'yenidizin')
+
+</textarea>
+<p>
+os.rename() fonksiyonu dizin adlarını değiştirmek için kullanılan bir fonksiyondur.Kullanım  şekli os.rename("değiştirilmek_istenen_dizin_adı","yeni_dizin") şeklindedir.
+</p>
+<hr>
+<br>
+
+
+
+
+
+<h1>Os.replace()</h1>
+<textarea disabled style ="color:white" cols="50" rows="7" >
+>>>os.replace('dizin', 'yenidizin')
+</textarea>
+<p>
+os modülünün replace() fonksiyonu biraz önce öğrendiğimiz rename() fonksiyonu gibi çalışır:
+os.replace("dizin", "yenidizinu komut, tıpkı rename() fonksiyonunda olduğu gibi, dizin adlı dizinin adını yenidizin olarak değiştirecektir.
+Eğer yenidizin adlı bir dizin zaten varsa, replace() fonksiyonu, hem Windows’ta hem de GNU/Linux’ta, varolan bu yenidizin dizininin üzerine yazmaya çalışır. GNU/Linux’ta çoğu durumda bunu başarır, ancak Windows’ta yine de çeşitli izin hataları ile karşılaşabilirsiniz.
+</p>
+<hr>
+<br>
+
+
+
+
+<h1>Os.remove()</h1>
+<textarea disabled style ="color:white" cols="50" rows="7" >
+>>>os.remove("yenidizin")
+</textarea>
+<p>
+os modülünün remove() adlı fonksiyonu, bilgisayarımızdaki dosyaları silmemizi sağlar:
+</p>
+<hr>
+<br>
+
+
+<h1>Os.removedirs()</h1>
+<textarea disabled style ="color:white" cols="50" rows="7" >
+>>>os.removedirs("form/form/form/")
+</textarea>
+<p>
+os modülünün removedirs() fonksiyonu, içi boş dizin yollarını silmemizi sağlar.
+Eğer bütün dizinlerin içi boşsa, 1.form'dan 3.form'a  kadar olan bütün dizinler (form ve form dahil) silinecektir.
+</p>
+<hr>
+<br>
+
+
+
+<h1>Os.rmdir()</h1>
+<textarea disabled style ="color:white" cols="50" rows="7" >
+>>>os.rmdir("yenidizin")
+</textarea>
+<br>
+<p>
+os modülünün rmdir() fonksiyonu, içi boş bir dizini silmek için kullanılır:
+os.rmdir('yenidizin')
+Eğer silmeye çalıştığınız dizin içinde herhangi bir başka dizin veya dosya varsa bu fonksiyon hata verecektir.
+</p>
+<br>
+
+
+
+<h1>Os.Stat()</h1>
+<textarea disabled style ="color:white" cols="80" rows="7" >
+>>>dosya = os.stat('dosya_adı')
+>>>print(dosya)
+os.stat_result(st_mode=33279, st_ino=17732923532961356,
+st_dev=1745874298, st_nlink=1, st_uid=0, st_gid=0,
+st_size=495616, st_atime=1416488851, st_mtime=1415275662,
+st_ctime=1415275658)
+<br>
+>>>dosya.st_size 
+1024
+</textarea>
+<p>
+st_atime<br>
+dosyaya en son erişilme tarihi
+<br><br>
+st_ctime<br>
+dosyanın oluşturulma tarihi (Windows’ta)
+<br><br>
+st_mtime<br>
+dosyanın son değiştirilme tarihi
+<br><br>
+st_size<br>
+dosyanın boyutu<br>
+'os.stat()' komutu içine girdiğiniz dosyanın adını tarihini ,değiştirilme tarihini,erişilme tarihini, boyutunu  gibi birçok bilgi verir.
+</p>
+<hr>
+<br>
+
+
+
+
+
+<h1>Os.system()</h1>
+<textarea disabled style ="color:white" cols="50" rows="7" >
+>>>os.system("python.exe")
+#Python sizde yüklüyse program çalışacaktır.Aksi Halde Çalışmaz
+</textarea>
+<p>
+os modülünün system() fonksiyonu Python içinden sistem komutlarını veya başka programları çalıştırabilmemizi sağlar. Mesela:
+os.system('python.exe')
+</p>
+<hr>
+<br>
+
+
+
+
+<h1>Os.urandom()</h1>
+<textarea disabled style ="color:white" cols="80" rows="7" >
+>>>os.urandom(12)
+b'F\xd4\xf8\xc3\x03\xbe\x06\xcdi\x12\x95!!\xc2\x8aY)~\xf2\xd1:'
+</textarea>
+<p>
+os modülünün urandom() fonksiyonu rastgele bayt dizileri elde etmek için kullanılabilir:
+os.urandom(8)
+Bu komut, 8 bayttan oluşan rastgele bir dizi oluşturur. Buradan elde ettiğiniz rastgele değeri kriptografik çalışmalarda veya rastgele parola üretme işlemlerinde kullanabilirsiniz.
+</p>
+<hr>
+<br>
+
+
+
+
+<h1>Os.walk()</h1>
+<textarea disabled style ="color:white" cols="90" rows="10" >
+for yol in os.walk("C:/Staj Takip Sistemi 3"):
+...     print(yol)
+('C:/Staj Takip Sistemi 3\\Staj Takip Sistemi 3\\obj\\Debug', ['TempPE'], ['.NETFramework,Version=v4.7.2.AssemblyAttributes.cs', 'DesignTimeResolveAssemblyReferences.cache', 'DesignTimeResolveAssemblyReferencesInput.cache', 'Staj Takip Sistemi 3.csproj.AssemblyReference.cache', 'Staj Takip Sistemi 3.csproj.CoreCompileInputs.cache', 'Staj Takip Sistemi 3.csproj.FileListAbsolute.txt', 'Staj Takip Sistemi 3.csproj.GenerateResource.cache', 'Staj Takip Sistemi 3.exe', 'Staj Takip Sistemi 3.pdb', 'Staj_Takip_Sistemi_3.egitim_yili_sec_form.resources', 'Staj_Takip_Sistemi_3.giris_form.resources', 'Staj_Takip_Sistemi_3.gosterilecek_bilgi_form.resources', 'Staj_Takip_Sistemi_3.isletme_form.resources', 'Staj_Takip_Sistemi_3.ogrenci_form.resources', 'Staj_Takip_Sistemi_3.ogretmen_form.resources', 'Staj_Takip_Sistemi_3.Properties.Resources.resources'])
+('C:/Staj Takip Sistemi 3\\Staj Takip Sistemi 3\\obj\\Debug\\TempPE', [], [])
+('C:/Staj Takip Sistemi 3\\Staj Takip Sistemi 3\\Properties', [], ['AssemblyInfo.cs', 'Resources.Designer.cs', 'Resources.resx', 'Settings.Designer.cs', 'Settings.settings'])
+
+
+
+
+
+os.listdir()
+['.azure', '.bash_history', '.designer', '.gitconfig', '.idlerc', '.vscode', '3D Objects', 'AppData', 'Application Data', 'arayüz', 'Belgelerim', 'Contacts', 'Cookies', 'Creative Cloud Files', 'Documents', 'Downloads', 'Favorites', 'Links', 'Local Settings', 'Masaüstü', 'Music', 'NetHood', 'NTUSER.DAT', 'ntuser.dat.LOG1', 'ntuser.dat.LOG2', 'NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TM.blf', 'NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TMContainer00000000000000000001.regtrans-ms', 'NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TMContainer00000000000000000002.regtrans-ms', 'ntuser.ini', 'OneDrive', 'PrintHood', 'PycharmProjects', 'Recent', 'Saved Games', 'Searches', 'SendTo', 'Start Menu', 'Templates', 'Videos']
+</textarea>
+<p>
+os.walk modülü aynı 'os.listdir ' modülüne benzer bir modüldür.Ancak bazı farkları vardır.
+
+
+<p>ve bundan fazlası tam olarak farkları ise<u> 'os.listdir' sadece dosyaları listeler 'os.walk' bütün dosyaların içindeki uzantılar setuplar ve benzerlerini listeler </u></p> 
+</p>
+<hr>
+<br>
+
+
+
+
+<h1>Os.environ()</h1>
+<textarea disabled style ="color:white" cols="50" rows="7" >
+
+for k, v in os.environ.items():
+    print(k.ljust(10), v)
+#Bilgisayarınızda'ki bütün bilgiler gözükücektir 
+</textarea>
+<p>
+os modülünün environ adlı niteliği, kullandığımız işletim sistemindeki çevre değişkenleri hakkında bilgi edinmemizi sağlar.
+
+Bu nitelik alelade bir sözlüktür. Dolayısıyla bu sözlüğün içinde neler olduğunu şu kodlarla görebilirsiniz:
+<br>
+<hr>
+
+<hr><br>
+Sözlük içindeki istediğiniz bir değere nasıl erişeceğinizi biliyorsunuz:
+
+Ana Dizini ve Bilgisayar Adını Görmek için Bu Kodlar Kullanılır.<br>
+</p>
+<hr>
+<br>
+
+
+
+<h1>Os.path()</h1>
+
+<p>
+os modülü üzerinde dir() fonksiyonunu uyguladığınızda, orada path adlı bir niteliğin olduğunu göreceksiniz. Bu nitelik, kendi içinde pek çok önemli fonksiyon ve başka nitelik barındırır.
+
+Şimdi bu bölümde os.path adlı bu niteliğin içeriğini inceleyeceğiz.
+<br><br>
+<h2>os.path.abspath()</h2>
+abspath() fonksiyonu, bir dosyanın tam yolunun ne olduğunu söyler:<br>
+<textarea disabled style ="color:white" cols="50" rows="7" >
+>>> os.path.abspath('Staj Takip Sistemi 3')
+'C:\\Users\\pican\\Staj Takip Sistemi 3'
+</textarea>
+<br>os.path.abspath('falanca.txt')
+<br><br>
+<h2>os.dirname</h2>
+<textarea disabled style ="color:white" cols="50" rows="7" >
+>>> os.path.dirname("C:/Users/pican/site.txt")
+'C:/Users/pican'
+</textarea>
+os.dirname() fonksiyonu, bir dosya yolunun dizin kısmını verir:
+<br>
+</p>
+<hr>
+<br>
+
+
+
+
+
+
+
+<h1>Os.path.exists()</h1>
+<textarea disabled style ="color:white" cols="50" rows="7" >
+>>>C:/Users/pican/formlar
+True
+
+</textarea>
+<p>
+exists() fonksiyonu bir dosya veya dizinin varolup olmadığını kontrol eder:
+Eğer böyle bir dosya varsa  kod True çıktısı, yoksa False çıktısı verir.
+</p>
+<hr>
+<br>
+
+
+
+
+<h1>Os.path.expanduser()</h1>
+<textarea disabled style ="color:white" cols="50" rows="7" >
+>>> os.path.expanduser('~')
+'C:\\Users\\pican'
+</textarea>
+<p>
+expanduser() fonksiyonu bilgisayardaki kullanıcıya ait dizinin adresini verir:
+<br><hr>'C:\\Users\\pican'<hr><br>
+veya:
+
+os.path.expanduser('~')
+
+''
+Bu fonksiyonu kullanarak, Windows’ta belirli bir kullanıcı ismi ve dizini de oluşturabilirsiniz:<br>
+<textarea disabled style ="color:white" cols="50" rows="7" >
+>>>os.path.expanduser('~ghaith')
+'C:\\Users\\ghaith'
+</textarea>
+<br>
+os.path.expanduser('~can')
+<br>
+'C:\\Users\\can'
+</p>
+<hr>
+<br>
+
+
+
+<h1>Os.path.isdir()</h1>
+<textarea disabled style ="color:white" cols="50" rows="7" >
+>>>os.path.isdir(:/Users)
+True
+</textarea>
+<p>
+isdir() fonksiyonu, kendisine parametre olarak verilen öğenin bir dizin olup olmadığını sorgular:
+
+os.path.isdir('C:/Users')
+Eğer parametre bir dizin ise True, eğer bir dosya ise False çıktısı alınır.
+</p>
+<hr>
+<br>
+
+
+
+
+<h3>Os.path.isfile()</h3>
+<textarea disabled style ="color:white" cols="50" rows="7" >
+>>>os.path.isfile('C:/Users/pican/site')
+False
+</textarea>
+<hr>
+<p>
+isfile() fonksiyonu, kendisine parametre olarak verilen öğenin bir dosya olup olmadığını sorgular:
+os.path.isfile('C:/Users/pican/site')
+Eğer parametre bir dosya ise True, eğer bir dizin ise False çıktısı alınır.
+</p>
+<hr>
+<br>
+
+
+
+<h3>Os.path.join()</h3>
+<textarea disabled style ="color:white" cols="50" rows="7" >
+>>>os.path.join('dizin1', 'dizin2', 'dizin3') 
+'dizin1\\dizin2\\dizin3'
+</textarea>
+<hr>
+<p>
+
+join() fonksiyonu, kendisine verilen parametrelerden, ilgili işletim sistemine uygun yol adresleri oluşturur:
+
+os.path.join('dizin1', 'dizin2', 'dizin3') #Windows
+
+'dizin1\\dizin2\\dizin3'
+
+os.path.join('dizin1', 'dizin2', 'dizin3')
+
+'dizin1/dizin2/dizin3'
+</p>
+<hr>
+<br>
+
+
+
+
+
+
+
+<h1>Os.path.split()</h1>
+<textarea disabled style ="color:white" cols="50" rows="7" >
+>>>os.path.splitC:/Users/pican/Desktop')
+</textarea>
+<hr>
+<p>
+
+split() fonksiyonu, bir yol adresinin son kısmını baş kısmından ayırır:<br>
+Bu Fonksiyonu kullanmak için o dizine geçiş yapmak gerekmez.
+
+</p>
+<hr>
+<br>
+
+
+
+<h1>Os.path.splitext()</h1>
+<textarea disabled style ="color:white" cols="50" rows="7" >
+>>>dosya, uzantı = os.path.splitext('site.txt')
+>>>dosya
+'site'
+
+>>>uzantı
+'txt'
+</textarea>
+<p>
+Pythonda'ki 'Os.path.splitext' komutu  dosyayla uzantıyı ayırmak için kullanılır yana yana ','le iki değişken verilir: Baştaki değişken dosyaya sondaki değişken ise uzantıya denk gelir. 
+</p>
+<hr>
+<br>
+
+<br><br><br><br>
+<p>Pythonda'ki diğer konuları görmek için &nbsp;<a href="/Python">Python</a> adresine gidin</p>
+
+<br><br><br><br>
+</font>
+</div>
+{% endblock body %}

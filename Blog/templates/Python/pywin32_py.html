@@ -1,0 +1,215 @@
+{% extends "desinger.html" %}
+
+{% block body %}
+<div style = "margin-top: 50px;" class = "container">
+<font size = "5">
+<i>
+
+<h1>PyWin32</h1>
+<br>
+<h3>Nasıl Kullanılır?</h3> 
+<br>
+<p>
+pywin32
+pywin32 paketi çok uzun zamandır var. Hatta bu konuyu ele alan kitap 2000 yılında Mark Hammond ve Andy Robinson tarafından yayınlanmıştır. 18 yaşında olmama rağmen (ki bu beni gerçekten yaşlı hissettiriyor :)), altında yatan teknoloji ve kavramlar bugün hala çalışıyor. Pywin32, temel olarak COM nesneleri ile etkileşime girmemize ve Windows uygulamalarını python ile otomatikleştirmemize izin veren çok ince bir python sarmalayıcıdır. Bu yaklaşımın gücü, bir Microsoft Uygulamasının python aracılığıyla yapabileceği hemen hemen her şeyi yapabilmenizdir. Dezavantajı, bunu Microsoft Office'in yüklü olduğu bir Windows sisteminde çalıştırmanız gerektiğidir. Bazı örnekleri incelemeden önce, sisteminizde pip veya conda kullanarak pywin32'nin kurulu olduğundan emin olun.
+
+Yapacağım bir diğer tavsiye, Tim Golden'ın sayfasının bağlantısını elinizin altında tutmanız. Bu kaynak, otomasyon ve diğer yönetim görevleri için Windows'ta python'un nasıl kullanılacağına ilişkin daha birçok ayrıntıya sahiptir.
+</p>
+<br>
+<h3>Başlarken</h3>
+<p>
+Bu uygulamaların tümü, benzer içe aktarma işlemleriyle başlar ve bir uygulamayı etkinleştirme işlemi yapar. Excel'i açmanın çok kısa bir örneği:
+</p>
+<div class= "jumbotron">
+import win32com.client as win32<br>
+excel = win32.gencache.EnsureDispatch('Excel.Application')<br>
+
+excel.Visible = True<br>
+_ = input("Press ENTER to quit:")<br>
+
+excel.Application.Quit()<br>
+</div><br>
+<p>
+Bunu komut satırından çalıştırdığınızda, Excel'in açıldığını görmelisiniz. ENTER'a bastığınızda uygulama kapanacaktır. Bunu daha kullanışlı bir uygulama haline getirmeden önce geçmemiz gereken birkaç anahtar kavram var.
+
+İlk adım, win32 istemcisini içe aktarmaktır. Gerçek gönderim kodunu biraz daha kısaltmak için win32 olarak içe aktarma kuralını kullandım.
+
+Bu kodun büyüsü, Excel'i başlatmak için SureDispatch'i kullanmaktır. Bu örnekte, statik bir proxy oluşturmak için gencache.EnsureDispatch kullanıyorum. Statik ve dinamik proxy'ler hakkında daha fazla ayrıntı öğrenmek istiyorsanız bu makaleyi okumanızı tavsiye ederim. Bu makalede yer alan örnek türleri için bu yaklaşımı kullanma şansım oldu, ancak dürüst olacağım - Çeşitli gönderme yaklaşımlarını geniş çapta denemedim.
+
+Artık excel nesnesi başlatıldığına göre, excel.Visible = True ayarını yaparak onu açıkça görünür hale getirmemiz gerekiyor.
+
+Win32 kodu oldukça akıllıdır ve program çalışmayı bitirdiğinde excel'i kapatacaktır. Bu, kodu kendi başına çalışmaya bırakırsak, muhtemelen Excel'i görmeyeceğiniz anlamına gelir. Kullanıcı ENTER'a basana kadar Excel'in ekranda görünmesini sağlamak için sahte istemi ekliyorum.
+
+Excel.Application.Quit() öğesinin son satırını biraz kemer ve jartiyer yaklaşımı olarak ekliyorum. Açık konuşmak gerekirse, program bittiğinde win32 Excel'i kapatmalı ama ben uygulamayı kapanmaya nasıl zorlayacağımı göstermek için excel.Application.Quit()'i dahil etmeye karar verdim.
+
+COM'u kullanmanın en temel yaklaşımı budur. Bunu daha faydalı yollarla genişletebiliriz. Bu makalenin geri kalanında, kendi ihtiyaçlarınız için faydalı olabilecek bazı örnekler verilecektir.
+</p>
+<br><br>
+<h3>Excel Açmak</h3>
+<div class ="jumbotron"  class= "container">
+import win32com.client as win32<br>
+import pandas as pd<br>
+from pathlib import Path<br>
+<br>
+# Uzak veri dosyasında okuma<br>
+df = pd.read_csv("https://github.com/chris1610/pbpython/blob/master/data/sample-sales-tax.csv?raw=True")<br><br>
+
+# Çıktı dosyası için tam yolu tanımlayın<br>
+out_file = Path.cwd() / "tax_summary.xlsx"<br><br>
+
+
+df_summary = df.groupby('category')['ext price', 'Tax amount'].sum()<br><br>
+
+# Save the file as Excel<br>
+df_summary.to_excel(out_file)<br><br>
+
+# Excel'i açın ve görünür hale getirin<br>
+excel = win32.gencache.EnsureDispatch('Excel.Application')<br><br>
+excel.Visible = True<br><br>
+
+# Dosyayı açın<br><br>
+excel.Workbooks.Open(out_file)<br><br>
+
+#  Kapatmadan önce bekleyin<br>
+_ = input(" Excel'i Kapatmak İçin ESC 'ye Basın")<br>
+excel.Application.Quit()<br>
+
+</div>
+
+<br><br>
+
+<h3></h3>
+<p>
+Outlook'a bir Excel dosyası ekleyin
+COM'un yardımcı olduğu başka bir basit senaryo, bir e-postaya dosya eklemek ve bir dağıtım listesine göndermek istediğiniz zamandır. Bu örnek, bazı veri manipülasyonlarının nasıl yapılacağını, bir Outlook e-postasının nasıl açılacağını, bir dosyanın nasıl ekleneceğini ve göndermeden önce ek metin için açık bırakılmasını gösterir.
+
+İşte tam örnek:
+</p>
+<div class =jumbotron>
+import win32com.client as win32<br>
+import pandas as pd<br>
+from pathlib import Path<br>
+from datetime import date<br>
+
+<br><br>
+to_email = """
+Ahmet, Can <honest_abe@example.com>; chris@example.com
+"""
+<br><br>
+cc_email = """
+berkay, berk <benny@example.com>;
+"""
+<br><br>
+<br>
+df = pd.read_csv("https://github.com/chris1610/pbpython/blob/master/data/sample-sales-tax.csv?raw=True")
+<br><br>
+
+<br>
+out_file = Path.cwd() / "tax_summary.xlsx"
+<br><br>
+
+
+<br>
+df_summary = df.groupby('category')['ext price', 'Tax amount'].sum()<br><br>
+
+<br>
+df_summary.to_excel(out_file)<br><br>
+
+<br>
+outlook = win32.gencache.EnsureDispatch('Outlook.Application')<br>
+new_mail = outlook.CreateItem(0)<br><br>
+
+<br>
+new_mail.Subject = "{:%m/%d} Report Update".format(date.today())<br><br>
+
+<br>
+new_mail.To = to_email<br>
+new_mail.CC = cc_email<br><br>
+
+<br>
+attachment1 = out_file<br><br>
+
+# The file needs to be a string not a path object<br>
+new_mail.Attachments.Add(Source=str(attachment1))<br><br>
+
+<br>
+new_mail.Display(True)<br><br>
+</div>
+
+<p>Bu örnek biraz daha işin içine giriyor ama temel kavramlar aynı. Nesnemizi (bu durumda Outlook) oluşturmamız ve yeni bir e-posta oluşturmamız gerekiyor. COM ile çalışmanın zorlu yönlerinden biri, çok tutarlı bir API olmamasıdır. Bunun gibi bir e-posta oluşturmanız sezgisel değildir: new_mail = outlook.CreateItem(0) Belirli bir sorun için tam API'yi bulmak genellikle biraz arama gerektirir. </p>
+<br><br>
+<img src="https://pbpython.com/images/dashboard_image.png" alt = "veri analizi">
+<br><br>
+
+<h3>Kodları Çalıştıralım</h3>
+<div class = "jumbotron">
+import win32com.client as win32<br>
+import pandas as pd<br>
+from pathlib import Path<br><br>
+
+<br>
+df = pd.read_csv("https://github.com/chris1610/pbpython/blob/master/data/sample-sales-tax.csv?raw=True")<br><br>
+
+<br>
+data_file = Path.cwd() / "sales_summary.xlsx"<br><br>
+
+<br>
+save_file = Path.cwd() / "sales_dashboard.xlsx"<br><br>
+
+<br>
+template_file = Path.cwd() / "sample_dashboard_template.xlsx"<br><br>
+</div>
+<p>
+içe aktarmalarımızı yaptığımız bölüm, verileri okuduk ve üç dosyayı da tanımladık. Bu işlemin, verileri pandalarla özetleme ve verileri bir Excel dosyasına kaydetme adımını içermesi dikkat çekicidir. Daha sonra bu dosyayı yeniden açıp verileri şablona kopyalıyoruz. Biraz dolambaçlı ama bu senaryo için bulabildiğim en iyi yaklaşım bu.
+</p>
+<h3>Excel dosyasını kaydederiz</h3>
+<div class = "jumbotron">
+# Do some summary calcs<br>
+# In the real world, this would likely be much more involved<br>
+df_summary = df.groupby('category')['quantity', 'ext price', 'Tax amount'].sum()<br><br>
+
+<br>
+df_summary.to_excel(data_file, sheet_name="Data")<br>
+</div>
+
+<h3>Excel pano sekmemizde birleştirmek ve yeni bir kopya kaydetmek için COM kullanıyoruz</h3>
+<p>
+<div class = "jumbotron">
+# Use com to copy the files around<br>
+excel = win32.gencache.EnsureDispatch('Excel.Application')<br>
+excel.Visible = False<br>
+excel.DisplayAlerts = False<br><br>
+
+<br>
+wb_template = excel.Workbooks.Open(template_file)<br><br>
+
+<br>
+wb_data = excel.Workbooks.Open(data_file)<br><br>
+
+<br>
+wb_data.Worksheets("Data").Range("A:D").Select()<br><br>
+
+<br>
+excel.Selection.Copy(Destination=wb_template.Worksheets("Data").Range("A1"))<br><br>
+
+<br>
+wb_template.SaveAs(str(save_file))<br><br>
+</div>
+</p>
+<br>
+<p>Kod Excel'i açar ve görünür olmadığından emin olur. Ardından gösterge tablosu şablonunu ve veri dosyalarını açar. Tüm verileri seçmek için Range("A:D").Select()'i kullanır ve ardından onu şablon dosyasına kopyalar.
+
+Son adım, şablonu yeni bir dosya olarak kaydetmektir.
+
+Bu yaklaşım, veri işleme için python kullanmak istediğiniz ancak karmaşık bir Excel çıktısına ihtiyaç duyduğunuz bir durumunuz olduğunda çok uygun bir kısayol olabilir. Şu anda buna belirgin bir ihtiyacınız olmayabilir, ancak karmaşık bir Excel raporu oluşturursanız, bu yaklaşım, elektronik tabloyu python ile elle kodlamaya çalışmaktan çok daha basittir.</p>
+
+<br><br><br><br>
+
+<p>Pythonda'ki diğer konuları görmek için &nbsp;<a href="/Python">Python</a> adresine gidin</p>
+
+<br><br><br><br><br><br><br><br>
+
+</i>
+</font>
+</div>
+{% endblock body %}

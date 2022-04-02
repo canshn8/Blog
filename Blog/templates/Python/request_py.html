@@ -1,0 +1,108 @@
+{% extends "desinger.html" %}
+
+{% block body %}
+<div style = "margin-top: 50px;" class = "container">
+<h1>Request Modülülü</h1>
+<hr>
+<h3>pip install requests</h3><hr><br><br>
+
+<font size = "6" >
+<p><br>
+<h3>Request Nedir?</h3>
+<hr>
+HTTP istekleri gönderen kod yazmak zor olabilir, çünkü HTTP’nin verileri tam olarak insanların okuması kolay bir şekilde biçimlendirmemesi gerçeği zordur.<br>
+
+Requests Python paketi (slogan: “İnsanlar için HTTP”), uygulamanızdan HTTP istekleri göndermek için normalde yapmanız gereken sıkıcı görevlerin çoğunu otomatikleştirerek bu sorunu çözer. Sorgu dizeleri ekleme veya POST form kodlaması yapma ihtiyacını ortadan kaldırır. Ayrıca, HTTP sunucularıyla bağlantıları otomatik olarak canlı tutar ve bunu yapmak için bir sürü kod yazma ihtiyacını ortadan kaldırır.<br>
+
+Kısacası, uygulamanız HTTP üzerinden herhangi bir veri gönderiyorsa, İstekler mutlaka sahip olunması gereken bir pakettir.<br>
+<hr>
+import requests
+diyerek aktaralım. Şimdi de bu güzel modülün özelliklerine geçelim.<br>
+
+<br>
+<a href = "https://imgyukle.com/f/2022/02/05/o68G6A.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o68G6A.png"></a>
+<br>
+
+Bu şekilde istekler gönderebiliyoruz. Elbette ki istek göndermek ile olmuyor, parametre gönderme ihtiyacı var. Şimdi istek atarken nasıl parametre gönderebileceğimize bakalım.<br>
+Parametre Göndermek
+Parametre göndermek için params sözlüğünü kullanıyoruz. Hemen bir örnek verelim.<br><br>
+
+<a href = "https://imgyukle.com/f/2022/02/05/o6tExt.png" rek = "lightbox" title = "Örnek"><img src ="https://imgyukle.com/f/2022/02/05/o6tExt.png"></a>
+<br><br>
+params sözlüğü içinde parametre geçtim, url methodu ile de istek yapılan url adresini görebilirsiniz. Dikkat ettiyseniz verdiğimiz parametreler bağlantı adresinin sonuna eklendi.<br>
+Bazen istek attığınız sayfa başka bir sayfaya yönleniyor olabilir, bu yönlenmeyi takip edebilir veya etmeyebiliriz, bunun için de allow_redirects=True veya False kullanılıyor.<br>
+<br>
+<a href = "https://imgyukle.com/f/2022/02/05/o6tCoq.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o6tCoq.png"></a>
+<br><br>
+Dikkat ederseniz allow_redirects=False yapıldığında yönlendirmeyi kapattı ve o sayfanın status_code değeri 302 döndü. True yapınca da yönlendirmeye izin verildi ve status_code 200 döndü.<br>
+Bu örnek GET isteği içindi, şimdi bir de POST için sanki bir HTML formu doldurmuş ve o bilgileri post etmişiz gibi davranalım.<br>
+<br><br>
+
+<a href = "https://imgyukle.com/f/2022/02/05/o686jq.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o686jq.png"></a>
+<br><br>
+Dikkat ettiyseniz data parametresi ile username ve password bilgilerini formdata olarak gönderdim. Ardından status_code methodu ile 200 yani başarılı olduğunu kontrol ettim. Ardından json methodu ile dönen değeri ekrana bastırdım. Kullandığımız httpbin.org servisi, post ettiğimiz parametreleri bize geri döndürüyor. Bu nedenle json içinden sadece form alanını çekerek gönderdiğim parametreleri görebildim.<br>
+İstek atarken timeout değeri de belirleyebilirsiniz, saniye olarak bir değer atayabilirsiniz.<br>
+<br>
+<a href = "https://imgyukle.com/f/2022/02/05/o6tI5x.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o6tI5x.png"></a>
+<br><br>
+Belirtilen timeout içinde cevap alamaz ise hata verecektir.<br>
+Burada bir parantez açalım, REST API ile çalışıyorsak, farklı endpointlere json post etmemiz gerekecek. Bu noktada da hemen json modülü bize yardım ediyor. Basit bir örnek yapalım ve bu konuyu bitirelim.<br>
+<br><br>
+
+<a hrerf= "https://imgyukle.com/f/2022/02/05/o680Yv.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o680Yv.png"></a>
+
+<br><br>
+Özel Header Kullanımı<br>
+İstek atarken, headers parametresi ile sözlük formatında istediğiniz bilgileri girebilirsiniz.<br>
+<br>
+<a href = "https://imgyukle.com/f/2022/02/05/o6tHry.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o6tHry.png"></a>
+<br><br>
+Bu örnek içerisinde headers parametresi ile özel bir user-agent değeri göndermiş oldum. status_codemethodu ile de isteğe dönen durum kodunu kontrol ettim. Benim örneğimde 200 gelmiş, yani başarılı.<br>
+İstek attıktan sonra kullanılan methodlar<br>
+Tüm örneklerde bir r değişkenine aktarmıştık attığımız tüm istekleri, şimdi bu r değişkeni içinde yani requests modülü içindeki istek attıktan sonra kullanabileceğimiz methodları inceleyelim.<br>
+text<br>
+Sitenin HTML içeriğini döndürür.<br>
+<br>
+<a href = "https://imgyukle.com/f/2022/02/05/o6tBbA.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o6tBbA.png"></a>
+<br><br>
+
+<a href = "https://imgyukle.com/f/2022/02/05/o6lVXn.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o6lVXn.png"></a>
+
+<br><br>
+Hangi url adresine istek gönderdiğini döner. İstek yaparken parametre olarak bazı değerler gönderebilirsiniz.<br>
+<br>
+<a href = "https://imgyukle.com/f/2022/02/05/o6lCfH.png" rek = "lightbox" title = "Örnek"><img src ="https://imgyukle.com/f/2022/02/05/o6lCfH.png"></a>
+<br><br>
+'http://httpbin.org/?soyad=erdinc&ad=sinan'<br>
+Url adresinin sonunda verdiğim parametrelerin nasıl iliştirildiğine dikkat edin.<br>
+status_code<br>
+İsteğin HTTP durum kodunu döndürür.<br>
+<br>
+<a href = "https://imgyukle.com/f/2022/02/05/o6lYXG.png"  rek = " lightbox"  title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o6lYXG.png"></a>
+<br><br>
+history<br>
+Bir istek attınız ve status_code değeri 200 geldi. Ancak belki 2 kere 301 sonra 1 kere 302 yönlendirme ile en son bir sayfaya geldi ve 200 döndü. Buna bakabilmek için bu method kullanılıyor.<br>
+<br>
+<a href = "https://imgyukle.com/f/2022/02/05/o6tq7s.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o6tq7s.png"></a>
+<br><br>
+ İşte buraya istek atınca history methodu ile de kontrol edince geçmişteki HTTP durum kodlarını görebiliyoruz.<br>
+encoding<br>
+Sayfanın encode değerini döner.<br>
+<br>
+<a href = "https://imgyukle.com/f/2022/02/05/o6lma0.png" rek = "lightbox"  title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o6lma0.png"></a>
+<br><br>
+request<br>
+Yaptığınız isteğin ne olduğunu döner, GET,POST v.s.<br><br>
+<a href = "https://imgukle.com/f/2022/02/05/o6lKu6.png" rek = "lightbox"  title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o6lKu6.png"></a>
+<br><br>
+Geçen zamanı döner.<br>
+<br>
+<a href = "https://imgyukle.com/f/2022/02/05/o6l33n.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o6l33n.png"></a>
+<br>
+</p><br>
+<br><br><br><br>
+<p>Pythonda'ki diğer konuları görmek için &nbsp;<a href="/Python">Python</a> adresine gidin</p>
+<br><br><br><br>
+</font>
+</div>
+{% endblock body %}

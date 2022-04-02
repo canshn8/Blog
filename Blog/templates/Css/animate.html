@@ -1,0 +1,125 @@
+{% extends "desinger.html" %}
+
+
+{% block body %}
+<div style = "margin-top: 100px;" class = "container">
+<font size = "5">
+<i>
+
+<h1>Animate</h1>
+<br><br><br>
+
+<p>
+CSS 3 Animation özelliği ile <a href ="https://jquery.com">jQuery</a> ve flash kullanmaya gerek kalmadan animasyon oluşturmak ve kullanmak mümkün. Tüm tarayıcılar için %100 bir destek var diyememiş olsak da birçoğunun desteklediğini söylemek mümkün. <a href ="https://www.caniuse.com/#search=animation ">https://www.caniuse.com/#search=animation</a> bağlantısına tıklayarak kullandığınız tarayıcının ve sürümününün CSS 3 Animation özelliğini destekleyip desteklemediğini görebilirsiniz.
+Eğer daha önce Flash ile ilgilendiyseniz, CSS 3 Animation özelliğini hızlıca kavrayabilirsiniz. Şimdi CSS 3 Animation özelliğinin nasıl kullanıldığını ve parametrelerini inceleyelim.
+</P>
+<br><br><br>
+
+<u>Temel anlamda animasyon, aşağıdaki kod bloğundaki gibi oluşturuluyor.</u>
+<br>
+<a href = "https://imgyukle.com/f/2022/02/05/o9R7SR.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o9R7SR.png"></a>
+<br><br>
+
+<b>@keyframes:</b> Animasyon tanımlarken @keyframes tanımlaması ile başlıyoruz.
+<br>
+<b>animasyon_adı:</b> Burada animasyonun adını tanımlıyoruz. Herhangi bir element üzerinde, oluşturacağımız animasyonu kullanmak istediğimizde bu tanımladığımız ismi kullanacağız.
+<br>
+<b>keyframe:</b> Burada başlangıç ve bitiş noktalarını daha doğrusu animasyonun hangi karede ne yapacağını belirtiyoruz.
+<br>
+<b>property, value:</b> Burada da animasyonun özellik ve değerlerini tanımlıyoruz.
+<br>
+
+
+<br><br><br>
+
+<u>Aşağıda bir örnekle bu parametreleri inceleyelim;</u>
+<br><br>
+
+<a href = "https://imgyukle.com/f/2022/02/05/o9VSFM.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o9VSFM.png"></a>
+<br><br>
+
+<p>
+ornek-animasyon isminde animasyonumuz oluşturduk. Animasyonun başlangıcında yani 0% bölümünde şeffaflık değerini 0 olarak tanımladık. Animasyonun sonunda yani 100% bölümünde şeffaflık değerini 1 ve arka plan rengini de kırmızı olarak tanımladık. Aynı yapıyı 0% - 100% yerinde from - to olarak da kullanabilirsiniz. Aşağıda kullanım şeklini görebilirsiniz.
+</p>
+<br><br>
+
+<a href = "https://imgyukle.com/f/2022/02/05/o9V5Xn.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o9V5Xn.png"></a>
+<br><br>
+<p>
+Siz de araya farklı % dilimleri ekleyerek farklı adımlarda farklı animasyonlar oluşturabilirsiniz. Örneğin, 25%, 50%, 64%, 78% gibi..
+</p>
+<br><br>
+
+<h2> Farklı Tarayıcılarda @keyframes Tanımlaması</h2>
+<br><p>
+İlk etapta farklı tarayıcılar için animasyon özelliğinin uyumsuzluğundan bahsetmiştik. Bunun önüne geçebilmek için aşağıdaki şekilde farklı tarayıcı tanımlamalarını kullanabiliriz.
+</p>
+<br><br>
+
+
+<a href = "https://imgyukle.com/f/2022/02/05/o9Vvuc.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o9Vvuc.png"></a>
+<br><br>
+
+<p>
+Bu şekilde farklı tarayıcılar için de @keyframes tanımlamasını gerçekleştirmiş olduk. Bu şekilde sadece animasyonu oluşturmuş olduk, şu an herhangi bir yerde kullanmadık, şimdi nasıl kullanacağımızı inceleyelim.
+</p>
+<br><br>
+
+
+<h2>Animation Özellikleri ve Kullanımı</h2>
+<br><br>
+<p>
+Animasyon özelliğinde süre, gecikme süresi, animasyon tekrarı gibi birden çok özellik mevcut.
+<br>
+<br>
+<b>animation-name</b>: Kullanmak istediğimiz animasyonun ismi. Yukarıda @keyframes ornek-animasyon olarak tanımladığımız ornek-animasyon değerini buraya yazıyoruz.
+<br><br>
+<b>animation-duration:</b> Animasyonun süresi. Örneğin, 1s (1 saniye), 750ms (750 milisaniye) gibi..
+<br>
+<br>
+<b>animation-timing-function:</b> Animasyonun hızı.
+<br>
+<br>
+<b>animation-delay: </b>Gecikme süresi. Örneğin, 2s olarak belirttiğimizde animasyon 2 saniye gecikmeli olarak başlayacaktır.
+<br>
+<br>
+<b>animation-iteration-count: </b>Animasyon tekrar sayısı. 3 olarak belirttiğimizde animasyon 3 defa çalışacaktır.
+<br>
+<br>
+<b>animation-direction:</b> Animasyonun yönü. Varsayılan olarak animasyon, baştan sonra doğru çalışacaktır. Örneğin, sondan başa doğru çalışmasını istersek alternate değerini kullanabiliriz.
+<br>
+<br>
+<b>animation-fill-mode:</b> Animasyon bittikten sonraki süreç. Örneğin backwards parametresini verdiğimizde, animasyon bitiminde, animasyonun ilk karesindeki özellikler uygulanır.
+<br><br>
+<u>Bir tane de örnek yapalım.
+</u>
+</p>
+<br><br>
+
+
+<a href = "https://imgyukle.com/f/2022/02/05/o9nVcf.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o9nVcf.png"></a>
+<br><br>
+
+<p>
+Eğer birden fazla yerde animasyon kullanacaksak, bu özellikleri tek tek yazmamız gereksiz kod kalabalığına neden olacaktır. Bunun için ise kısa tanımlamayı kullanmak daha kullanışlı olacaktır.
+</p>
+<br><br>
+
+
+<a href = "https://imgyukle.com/f/2022/02/05/o9nOK0.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o9nOK0.png"></a>
+<br><br>
+
+<p>
+Burada dikkat edilmesi gereken nokta, parametrelerin sıralaması. Verdiğimiz değerler, ilk örnekteki parametreler ile aynı sırada olmalıdır. Yani 1. parametre animation-name, 2. parametre animation-duration, 3. parametre animation-timing-function vs..
+</p>
+
+
+
+<br><br><br>
+<p>Cssde'ki diğer konuları görmek için &nbsp;<a href="/Css">Css</a> adresine gidin</p>
+
+<br><br><br>
+</i>
+</font>
+</div>
+{% endblock body %}

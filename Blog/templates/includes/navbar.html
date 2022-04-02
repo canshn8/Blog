@@ -1,0 +1,64 @@
+<div style ="margin-left: px20;" class = "container">
+<nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand" href="/"><font size = "6">AnaSayfa</font><i class="fas fa-home"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                        <div class="form-inline col p-0 pl-md-2 pr-md-3">
+                        <font size ="5">    
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Html">Html</a>
+                                </li>
+                                &nbsp;&nbsp;&nbsp;
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Css">Css</a>
+                                </li>
+                                &nbsp;&nbsp;&nbsp;
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Python">Python</a>
+                                </li>
+                                &nbsp;&nbsp;&nbsp;
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/JavaScript">JavaScript</a>
+                                </li>
+                                &nbsp;&nbsp;&nbsp;
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/CSharp">CSharp</a>
+                                </li>
+                                &nbsp;&nbsp;&nbsp;
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Duyuru">Duyuru</a>
+                                </li>
+                                &nbsp;&nbsp;&nbsp;
+                                
+                            </ul>
+                        </font>
+                        </div>
+                        <font size ="5">    
+                        <ul class="navbar-nav">    
+                                    {%if session["login_success"]%} 
+                                   
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/logoff">Çıkış Yap</a>
+                                    </li>   
+                                      
+                                    <!--<small>Hoşgeldin,{{session["username"]}}</small>-->
+                                    <br>
+                                    {%else%}
+                                    <li class = "nav-item">
+                                        <a class = "nav-link" href = "/login">Giriş Yap</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/register">Kayıt Ol</a>
+                                    </li>
+                                    {%endif%}
+
+                        </ul>
+                        </font>
+
+                    </div>
+                    
+</nav>
+</div>

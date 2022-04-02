@@ -1,0 +1,25 @@
+{% extends "desinger.html" %}
+
+{% block body %}
+<div style = "margin-top: 100px;" class = "container"><font size = "6">
+<i>
+<h1>SPA(Single Page Application) Nedir</h1>
+<br><br>
+<p>
+<hr>
+
+Single Page Application yaklaşımı son yıllarda web dünyasında hızla popülerliğini arttırmakta. Ben de birkaç kelime karalayacağım bu konuda.
+Single Page Application, routing(yönlendirme) işleminin backend tarafından değilde JavaScript tarafından client-side(istemci) tarafında yapıldığı bir web uygulamasıdır. Özetle web sayfamızda yalnızca bir tane index sayfası oluyor ve istemci tarafında sayfalar router ile değişiyor ve kullanıcıya gösteriliyor. Bunu yaparken de web componentlerden yardım alınıyor. Router, ilgili path için sizin belirlediğiniz componentleri kullanıcıya gösteriyor. Bu da yeni bir sayfaya geçmiş etkisi yaratıyor. Yani tüm bu componentlerin değişimi tarayıcınızda oluyor. Peki SPA’dan önce bu işlem nasıl yürüyordu?
+İlk zamanlar web uygulamalarımızda kullanıcı sunucudan bir statik sayfayı istiyordu ve sunucu istenen sayfayı istemci tarafına geri döndürüyordu. Burada istemci sizin internet tarayıcınız olarak düşünebiliriz. Ancak bu durum zamanla gelişti ve sunucular sizin gönderdiğiniz isteğe göre dinamik sayfalar üretmeye başladılar. Yani gelen sayfa dinamik olarak genellikle bir veritabanında depolanan veriler sayesinde oluşturuluyor ve istemciye gönderiliyordu. Ancak halen sunucudan tüm sayfa geliyordu bu kısım önemli. Yani sitede gezinen kullanıcı bu tüm sayfanın sürekli baştan yüklenmesinden kaynaklı daha yavaş bir internet deneyimi yaşıyordu. Ancak AJAX teknolojisinin çıkması ve gelişmesi ile bu durum değişti. AJAX çağrıları ile sayfanın yalnızca belli kısımları değişiyor ve sunucuya gönderiliyordu. Bu yöntem şuanda da birçok websitesinde kullanılmakta. Ancak halen routing işlemi sunucuya yükleniyor.
+
+<hr>
+</p>
+
+<br><br><b><br>
+<p>JavaScriptde'ki diğer konuları görmek için &nbsp;<a href="/JavaScript">JavaScript</a> adresine gidin</p>
+
+<br><br><br><br>
+</i>
+</font>
+</div>
+{% endblock body %}

@@ -1,0 +1,251 @@
+{% extends "desinger.html" %}
+
+
+{% block  body %}
+<div style = "margin-top: 100px;" class ="container">
+<font size = "5">
+<i>
+
+<h1>Html</h1>
+<br><br><br>
+
+
+<h2>HTML Form Nedir?</h2>
+<br><br>
+<p>
+HTML form, kısaca anlatacak olursak Web sitenizden bir veri tabanına, e-postanıza vb yerlere doldurulan veriyi ulaştırmak için kullanılır. Form Etiketi ayrıca birazdan aşağıda etiketini kullandığımız gibi açılmaktadır. İçerisine HTML form örnekleri ve bir çok öge yerleştirilebilir.
+<br>
+Html form Web sitesi içinde kullanıcıların sizinle iletişime geçmesi için bir alandır. Bu alanın kullanıcılardan hangi verileri istediğinize göre değiştirebilir ve farklı çeşitlerde kullanabilirsiniz. Genel olarak Html Formlar: İletişim formları, üyelik formları ve üye giriş formları olarak Web sitelerinde faaliyet göstermektedir.
+<br>
+Html formlar kullanıcılarınız ile iletişime geçmenizin en iyi yollarından biridir ve en etkili yol olarak tüm dünya çapında etkin olarak kullanılmaktadır.
+
+Kullanılan bu form içerisinde bir çok öge barındırabilir.
+</p>
+<br><br>
+<ul>
+<li>Ad soyad verisi.
+<li>Telefon numarası.
+<li>Form konusu.
+<li>E-Posta verisi.
+<li>Kullanıcı adı.
+<li>Parola verisi.
+<li>Cinsiyet bilgisi.
+<li>Çoktan seçmeli veriler.
+<li>Tek seçim hakkınız  olan veriler.
+<li>Okul Seçme, Lokasyon Belirleme, Hobi Alanları Belirleme vb seçenekler..
+<li>Mesaj alanları.
+</ul>
+
+<br><br><br>
+<h2>Html Form Örnekleri</h2>
+<br><br><br>
+
+<h3>Basit Bir Form Oluşturalım</h3>
+<br><br>
+
+<form name="uyegiris" action="uyegiris.html" method="post">
+	<table>
+		<tr>
+			<td><label for="kullaniciadi">Kullanıcı adı:</label></td>
+			<td><input type="text" name="kullaniciadi" id="kullaniciadi" /></td>
+		</tr>
+		<tr>
+			<td><label for="parola">Parola:</label></td>
+			<td><input type="password" name="parola" id="parola" /></td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="submit" value="Gönder" name="gonder" /></td>
+		</tr>
+		
+	</table>
+</form>
+
+<br><br>
+
+
+<h2>Kodlar:</h2>
+<textarea disabled style ="color:white" cols="80" rows="10"> >
+
+<form name="uyegiris" action="uyegiris.html" method="post">
+	<table>
+		<tr>
+			<td><label for="kullaniciadi">Kullanıcı adı:</label></td>
+			<td><input type="text" name="kullaniciadi" id="kullaniciadi" /></td>
+		</tr>
+		<tr>
+			<td><label for="parola">Parola:</label></td>
+			<td><input type="password" name="parola" id="parola" /></td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="submit" value="Gönder" name="gonder" /></td>
+		</tr>
+		
+	</table>
+</form>
+</textarea >
+
+<br><br><br><br><br><br><br>
+
+
+<form name="formgonder" action="iletisim.html" method="post">
+	<table>
+		<tr>
+			<td><label for="adsoyad">Ad, Soyad:</label></td>
+			<td><input type="text" name="adsoyad" id="adsoyad" /></td>
+		</tr>
+		<tr>
+			<td><label for="eposta">E-Posta:</label></td>
+			<td><input type="text" name="eposta" id="eposta" /></td>
+		</tr>
+		<tr>
+			<td><label for="telefon">Telefon:</label></td>
+			<td><input type="text" name="telefon" id="telefon" /></td>
+		</tr>
+		<tr>
+			<td><label for="konu">Konu:</label></td>
+			<td><input type="text" name="konu" id="konu" /></td>
+		</tr>
+		<tr>
+			<td><label for="mesaj">Mesajınız:</label></td>
+			<td><textarea  name="mesaj" id="mesaj" style="height:90px; width:200px" ></textarea></td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="submit" value="Gönder" name="gonder" /></td>
+		</tr>
+		
+	</table>
+</form>
+
+<br><br>
+
+<h2>Kodlar:</h2>
+<textarea disabled style ="color:white" cols="80" rows="10">
+<form name="formgonder" action="iletisim.html" method="post">
+	<table>
+		<tr>
+			<td><label for="adsoyad">Ad, Soyad:</label></td>
+			<td><input type="text" name="adsoyad" id="adsoyad" /></td>
+		</tr>
+		<tr>
+			<td><label for="eposta">E-Posta:</label></td>
+			<td><input type="text" name="eposta" id="eposta" /></td>
+		</tr>
+		<tr>
+			<td><label for="telefon">Telefon:</label></td>
+			<td><input type="text" name="telefon" id="telefon" /></td>
+		</tr>
+		<tr>
+			<td><label for="konu">Konu:</label></td>
+			<td><input type="text" name="konu" id="konu" /></td>
+		</tr>
+		<tr>
+			<td><label for="mesaj">Mesajınız:</label></td>
+			<td><textarea  name="mesaj" id="mesaj" style="height:90px; width:200px" ></textarea></td>
+		</tr>
+		<tr>
+		</tr>
+		
+	</table>
+</form>
+</textarea>
+
+<br><br><br><br><br><br><br><br>
+
+
+<form name="kayitgonder" action="kayit.html" method="post">
+	<table>
+		<tr>
+			<td><label for="adsoyad">Ad, Soyad:</label></td>
+			<td><input type="text" name="adsoyad" id="adsoyad" /></td>
+		</tr>
+		<tr>
+			<td><label for="eposta">E-Posta:</label></td>
+			<td><input type="text" name="eposta" id="eposta" /></td>
+		</tr>
+		<tr>
+			<td><label for="telefon">Telefon:</label></td>
+			<td><input type="text" name="telefon" id="telefon" /></td>
+		</tr>
+		<tr>
+			<td><label for="konu">Konu:</label></td>
+			<td><input type="text" name="konu" id="konu" /></td>
+		</tr>
+		<tr>
+			<td><label>Cinsiyet:</label></td>
+			<td>
+				<input type="radio" name="cinsiyet" value="Erkek"> Erkek 
+				<input type="radio" name="cinsiyet" value="Kadın"> Kadın
+			</td>
+		</tr>
+		<tr>
+			<td><label>Bildiğiniz Diller:</label></td>
+			<td>
+				<input type="checkbox" name="dil" value="İngilizce">İngilizce
+				<input type="checkbox" name="dil" value="Türkçe">Türkçe
+				<input type="checkbox" name="dil" value="İtalyanca">İtalyanca
+			</td>
+		</tr>
+		<tr>
+			<td><label for="mesaj">Mesajınız:</label></td>
+			<td><textarea  name="mesaj" id="mesaj" style="height:90px; width:200px" ></textarea></td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="submit" value="Gönder" name="gonder" /></td>
+		</tr>
+		
+	</table>
+</form>
+
+<br><br><br><br>
+
+<textarea disabled style ="color:white" cols="80" rows="10">
+<form name="kayitgonder" action="kayit.html" method="post">
+	<table>
+		<tr>
+			<td><label for="adsoyad">Ad, Soyad:</label></td>
+			<td><input type="text" name="adsoyad" id="adsoyad" /></td>
+		</tr>
+		<tr>
+			<td><label for="eposta">E-Posta:</label></td>
+			<td><input type="text" name="eposta" id="eposta" /></td>
+		</tr>
+		<tr>
+			<td><label for="telefon">Telefon:</label></td>
+			<td><input type="text" name="telefon" id="telefon" /></td>
+		</tr>
+		<tr>
+			<td><label for="konu">Konu:</label></td>
+			<td><input type="text" name="konu" id="konu" /></td>
+		</tr>
+		<tr>
+			<td><label>Cinsiyet:</label></td>
+			<td>
+				<input type="radio" name="cinsiyet" value="Erkek"> Erkek 
+				<input type="radio" name="cinsiyet" value="Kadın"> Kadın
+			</td>
+		</tr>
+		<tr>
+			<td><label>Bildiğiniz Diller:</label></td>
+			<td>
+				<input type="checkbox" name="dil" value="İngilizce">İngilizce
+				<input type="checkbox" name="dil" value="Türkçe">Türkçe
+				<input type="checkbox" name="dil" value="İtalyanca">İtalyanca
+			</td>
+		</tr>
+		<tr>
+			<td><label for="mesaj">Mesajınız:</label></td>
+			<td><textarea  name="mesaj" id="mesaj" style="height:90px; width:200px" ></textarea></td>
+		</tr>
+		<tr>
+		</tr>
+		
+	</table>
+</form>
+</textarea>
+
+
+<br><br><br><br><br><br><br><br><br>
+</i>
+</font>
+</div>
+{% endblock  body %}

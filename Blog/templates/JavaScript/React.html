@@ -1,0 +1,90 @@
+{% extends "desinger.html" %}
+
+{% block body %}
+<div style = "margin-top: 50px;" class = "container"><font size = "6">
+<i>
+<h1>React</h1>
+<br><br>
+
+
+
+<hr>
+<p>
+<ul>
+<a href="https://tr.reactjs.org">React</a> özellikle frontend alanında yaygın kullanılan frameworklerden biridir. Facebook tarafından geliştirilen React açık kaynaklı bir arayüz geliştiricidir. Ayrıca bir anlamda kardeşi diyebileceğimiz <a href ="https://reactnative.dev">React Native</a> ile de mobil web ve mobil uygulamaları aynı doğrultuda gerçekleştirebilirsiniz. İnteraktif kullanıcı arayüzleri kolay bir şekilde oluşturabilirsiniz. React kullanan şirketlerden bazıları; <br><a href="https://www.facebook.com">Facebook</a><br><a href="https://www.instagram.com"> Instagram</a><br><a href ="https://www.whatsapp.com">WhatsApp</a><br><a href = "https://www.netflix.com/tr/">WhatsApp</a><br> React JS özellikleri;<br><br>
+<li>React tek yönlü veri akışına olanak verir. Yani alt öğeler ana öğeden etkilenmez ve hata ayıklamak kolaydır.<br><br>
+<li>Arama motorları tarafından aramayı kolaylaştırır. SEO dostudur.<br><br>
+<li>Yeniden kullanılabilir bileşenlere izin verir. Sıfırdan kodlamaya gerek kalmaz.<br><br>
+<li>JSX uzantısı ile daha basit söz dizimi ve anlaşılabilir bir kodlama yapabilirsiniz.<br><br>
+<li>Sanal DOM özelliğiyle değişimleri hızlı yapabilmenizi sağlar.<br><br>
+<li>Farklı framework ve kütüphanelerle çalışabilir.<br><br>
+</ul>
+</p>
+<hr>
+<br><br>
+
+
+<h2>Basit bi örnek yapalım.</h2>
+<hr>
+<a href="https://imgyukle.com/f/2022/02/03/obnCUQ.png" rel="lightbox" title="Örnek"><img src = "https://imgyukle.com/f/2022/02/03/obnCUQ.png"></a>
+<p>
+React bileşenleri, girdi verileri alan ve ne gösterileceğini dönen bir render() methodu sağlar. Bu örnekte, XML benzeri bir sentaks olan JSX kullanılıyor. Bileşene iletilen girdi verilerine, render() methodunda this.props aracılığıyla ulaşılabilir.
+
+JSX isteğe bağlıdır ve React’i kullanmak için gerekli değildir. JSX derleme adımı ile üretilen ham JavaScript kodunu görmek için Babel REPL‘i deneyin.</p>
+<br><br>
+<hr>
+
+
+<h2>Saniye Dakika ve Saat Görevi Gören Ufak Bir Proje Yapalım</h2><hr>
+<a href="https://imgyukle.com/f/2022/02/03/obn6zc.png" rel="lightbox" title="Örnek"><img src ="https://imgyukle.com/f/2022/02/03/obn6zc.png"></a>
+<p>
+Durumlu Bir Bileşen
+Bir bileşen, girdi verileri (this.props ile ulaşılabilir) almanın yanı sıra, dahili state verisi (this.state ile ulaşılabilir) yönetebilir. Bir bileşenin durum verileri değiştiğinde, oluşturulan görüntü render() methodunun tekrar çağırılması ile güncellenecektir.
+<br>
+12.Satırdaki this.tick(),'in yanındaki 100' ü Değiştirerek Hangi Saniye Cinsinden Olacağını Ayarlayabilirsiniz 
+</p>
+
+<br><br>
+<h2>Yapılacaklar Listesi Oluşturalım</h2>
+<a href="https://imgyukle.com/f/2022/02/03/obxZm0.png" rel="lightbox" title="Örnek"><img src = "https://imgyukle.com/f/2022/02/03/obxZm0.png" rel="lightbox" title="Örnek"><br><img src ="https://imgyukle.com/f/2022/02/03/obx3Re.png"></a>
+<br>
+<p>
+Bir Uygulama
+props ve state kullanarak, küçük bir Yapılacaklar (Todo) uygulaması oluşturabiliriz. Bu örnekte state, hem öğelerin bulunduğu güncel listeyi hem de kullanıcının girmiş olduğu metni takip etmek için kullanılıyor. Olay yöneticileri, satıriçi oluşturuluyor gibi gözükmelerine rağmen, olay delagasyonu ile toplanıp gerçekleştirilir.
+</p>
+
+
+
+<h3>Çıktımız Aşağıdaki Gibi Olmalıdır.</h3>
+<br>
+<a href="https://imgyukle.com/f/2022/02/03/ob5pBx.png" rel="lightbox" title="Örnek"><img src = "https://imgyukle.com/f/2022/02/03/ob5pBx.png"></a>
+<p>
+props ve state kullanarak, küçük bir Yapılacaklar (Todo) uygulaması oluşturabiliriz. Bu örnekte state, hem öğelerin bulunduğu güncel listeyi hem de kullanıcının girmiş olduğu metni takip etmek için kullanılıyor. Olay yöneticileri, satıriçi oluşturuluyor gibi gözükmelerine rağmen, olay delagasyonu ile toplanıp gerçekleştirilir.
+</p>
+
+
+<br><br>
+<h2>Girilen Değeri Ekrana Döndürelim</h2>
+<a href="https://imgyukle.com/f/2022/02/03/obxZm0.png" rel="lightbox" title="Örnek"><img src = "https://imgyukle.com/f/2022/02/03/ob5tnA.png"><br>
+<a href="https://imgyukle.com/f/2022/02/03/obLJFs.png" rel="lightbox" title="Örnek"><img src = "https://imgyukle.com/f/2022/02/03/obLJFs.png"></a>
+
+
+<h3>Çıktımız</h3>
+<a href="https://imgyukle.com/f/2022/02/03/obLifh.png" rel="lightbox" title="Örnek"><img src = "https://imgyukle.com/f/2022/02/03/obLifh.png"></a>
+<p>
+Harici Eklentiler Kullanan Bir Bileşen
+React, başka kütüphaneler ve frameworkleri arayüz olarak kullanmanıza olanak sağlar. Bu örnek,  değerini anlık dönüştürmek amacıyla, bir Markdown kütüphanesi olan remarkable‘ı kullanmaktadır.
+</p>
+
+
+
+<br><br><br><br><br>
+<p>JavaScriptde'ki diğer konuları görmek için &nbsp;<a href="/JavaScript">JavaScript</a> adresine gidin</p>
+
+<br><br><br><br><br>
+
+
+</i>
+</font>
+</div>
+{% endblock body %}

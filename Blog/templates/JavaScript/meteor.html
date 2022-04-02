@@ -1,0 +1,69 @@
+{% extends "desinger.html" %}
+
+{% block body %}
+<div style = "margin-top: 100px;" class =  "container">
+<font size = "6">
+<i>
+
+<h3>Kütüphaneyi İndirmek İçin</h3>
+<hr>
+
+<p>MeteorJS NMP Kütüphanelerine Bağlı Olduğu İçin İlk Başta <a href = "https://nodejs.org/en/">NodeJs</a>&nbsp;Sitesine Gidip Node'yi İndirmeniz Gerekmektedir</p><br>
+<p>Peki Nasıl İndirilir. Bu Konu Hakkında Yazdığımız Makaleye Bakabilir&nbsp;<a href = "/JavaScript-NodeJs-Kurulumu">NodeJs İndir</a></p>
+<hr>
+
+
+
+<br><br>
+
+
+<h3>İndiğine Emin Olmak İçin Komut Satırına Aşağıdakileri Yazın</h3>
+<hr>
+<p>node -v</p>
+<hr>
+<br><br>
+
+<h3>Eğer Herhangi Bir Hata Almadıysanız</h3>
+<hr>
+<p>npm -v<br>
+Komutunu Kullanarak NPM  Kütüphanelerinin Kurulduğundan Emin Olabilirsiniz
+</p>
+<hr>
+<br><br>
+<p>Sırada Chocolatey kurulumu var bunun için <a href = "https://docs.chocolatey.org/en-us/choco/setup">Chocolatey</a>a
+adresine gidip oradaki terminal komutunu çalıştırmamız yeterli oluyor.
+<br><br>
+Chocolatey bir yazılım yönetimi otomasyonudur yani projenizdeki bağımlılıkları tespit edip gerekli
+kütüphaneleri kendisi kuruyor ve böylece teker teker sizin kurmanıza gerek kalmıyor. Kesinlikle işleri çok
+daha kolay hale getiriyor. MeteorJS de bu yapıyı kullanmış biz de MeteorJS’i onu kullnarak kuracağız.
+<br><br>
+MeteorJS kurulumu için son indirme aşaması şöyle <a href ="https://www.meteor.com/developers/install"></a> adresinden kendi işletim
+sistemimizi seçip terminal ekranına yapıştırıyoruz. Unutulmaması gereken şey daha öncesinde
+Chocolatey’in kurulmuş olmasıdır.
+<br><br>
+Kontrol Etmek İçin Komut Satırına Aşağıdaki Satırı Yazın.<br>
+<h3><hr>choco install meteor<hr></h3>
+<br>
+Bu komuttan sonra MeteorJS başarıyla kurulması gerekiyor. Eğer indirme esnasında hata alırsanız işlemleri
+tekrarlayabilirsiniz yada hata ekranındaki hangi komutu yazmanız gerektiği söylenecektir. O komutu da
+yazabilirsiniz.
+<br><br>
+<h3>Aşağıdaki Kodları Sırasıyla Girerek Projeyi Ayağa Kaldıralım.</h3>
+<ul>
+<li>meteor create simple-todos<br>
+<li>cd simple-todos<br>
+<li>meteor<br>
+</ul><br>
+komutlarını girdim. Proje http://localhost:3000 adresinde ayaklandı. Kurulum işlemimiz başarılı oldu.
+</p>
+
+
+<br><br><br><br>
+
+<p>JavaScriptde'ki diğer konuları görmek için &nbsp;<a href="/JavaScript">JavaScript</a> adresine gidin</p>
+
+<br><br><br><br>
+</i>
+</font>
+</div>
+{% endblock body %}

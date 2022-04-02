@@ -1,0 +1,296 @@
+{% extends "desinger.html" %}
+
+{% block body %}
+<div style = "margin-top: 100px;" class ="container">
+<font size ="6">
+<i>
+<h1>Html'e Giriş</h1>
+<br/><br/>
+
+<p>
+HTML, HyperText Markup Language, tarayıcı (browser)'lardan görebileceğimiz (Internet Explorer, Netscape gibi) internet dokümanlarını yaratmaya yarayan bir işaretleme dilidir. İnternet üzerindeki tüm sayfaların kaynağı HTML'dir. Tarayıcı olmadan HTML kodları birşey ifade etmez.
+HTML dokümanları herhangi bir yazı editörü ile düzenlenip *.htm, *.HTML, *.sHTML gibi uzantılarla kaydedilir. Bunun için notepad, pico, wordpad gibi editörler yeterlidir. Bunların yanında Frontpage, Dreamweaver, Homesite gibi bu iş için hazırlanmış ve kodlamayı kolaylaştıran programlar da vardır.
+Her HTML dokümanı <HTML> ile başlar ve </HTML> ile biter. <> şeklinde görülen komutlara etiket (tag) adı verilir. Bir HTML dokümanı iki ana kısımdan oluşmaktadır:<head> . . . </head> etiketi arasında yer alan Başlık bölümü; <body> . . . </body> etiketleri arasında yer alan Gövde Bölümü. Başlık bölümü içine <title>. . . </title> etiketi konulur. title, tarayıcımızın en üstünde gözükür ve oluşturulan sayfanın başlığıdır.
+</p><br>
+<a href = "https://imgyukle.com/f/2022/02/04/o4h2eS.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o4h2eS.png"></a>
+<br><br>
+
+<p>
+title etiketi ile başlığı belirttikten sonra Başlık bölümü kapatılır ve ana kısım olan Gövde' ye geçilir. Sayfamızda görüntülemek istediğimiz bütün bilgileri Gövde kısmına koyarız.
+
+Herhangi bir web sayfasının HTML kodunu görmek istediğimiz zaman, farenin sağ tuşuna tıklayıp view source/kaynağı görüntüle seçeneğini seçeriz.
+
+Bir etiketin nasıl davranması gerektiği hakkında bilgi içeren etiketin içindeki metne Değişken denir. Aşağıdaki örnekte body etiketinin içindeki bgcolor ifadesi değişkendir ve arkaplan rengini belirler. Çoğu etiket isteğe bağlı olarak ya da gerektiği için bağımsız değişkenleri kabul eder.
+<br>
+<a href = "https://imgyukle.com/f/2022/02/04/o4iIQI.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o4iIQI.png"></a>
+<br><br>
+Çift taraflı etiketler içiçe geçebilirler ama dikkat edilmesi gereken nokta en son açılan etiketin en önce kapatılmasıdır. Aşağıda yanlış ve doğru uyguluma örneği verilmiştir.
+<br><br>
+<a href = "https://imgyukle.com/f/2022/02/04/o4igbR.png" rek = "lightbox" ><img src = "https://imgyukle.com/f/2022/02/04/o4igbR.png"></a>
+</p>
+<br><br>
+
+<h2>HTML Başlık Etiketleri</h2>
+<br><br>
+<p>Başlıklar:<br><br>
+<a href ="https://imgyukle.com/f/2022/02/04/o4ifhI.png" rek = "lightbox" title ="Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o4ifhI.png"></a>
+</p><br>
+<a href = "https://imgyukle.com/f/2022/02/04/o4sR4c.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o4sR4c.png"></a>
+<br><br>
+
+<h2>Paragraflar, Satır boşlukları ve Yatay Çizgiler:</h2>
+<br>
+<p>
+Paragraflar <"p"> etiketiyle oluşturulur. Paragraf metni <"p"> ile <"/p"> arasında yer alır. Örneğin:
+
+<"p">Bu bir paragraftır. <"/p">
+
+Paragraf başlatmadan bir satır boşluğu yaratmak için <"br/"> etiketi kullanılır. Örneğin:
+
+<"p">Paragrafın ilk satırı. <"br/">Paragrafın ikinci satırı. <"/p">
+
+Sayfaya (aşağıdaki gibi) yatay çizgi eklemek için <"hr"> etiketini kullanırız.
+</p>
+<br>
+
+<a href = "https://imgyukle.com/f/2022/02/04/o4sDi1.png" rek = "lightbox" title ="Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o4sDi1.png"></a>
+<br><br><br>
+
+<h2>METİNLER</h2><br>
+<a href ="https://imgyukle.com/f/2022/02/04/o4sMjP.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o4sMjP.png"></a>
+<br>
+<p>
+<br>
+
+Color yazı karakterinin rengini, face yazi tipini (arial, verdana, tahoma gibi), size da boyutunu belirler. Size değişkeninde kullanılan rakam 1'den 7'ye kadardır.
+
+<"font"> etiketi HTML 4. 0 'da desteklenmemektedir ama yine de taracıyıcılar <"font"> etiketi ile yapılmış biçimlendirmeyi destekler. Hala pek çok web sayfasında <"fon"t> etiketi kullanılmaktadır. Başlangıç seviyesi için <"font"> etiketi kullanmak yeterliyken ilerki seviyeler için stilleri kullanmanız tavsiye edilir. (Bkz: Gelişmiş HTML Dersi Stiller ve Satır İçi Kapsayıcıları Başlıkları)
+
+Font etiketi ile birlikte aşağıdaki tabloda verilen etiketleri kullanarak sayfanızdaki metinleri biçimlendirebilirsiniz.
+</p><br/>
+<a href = "https://imgyukle.com/f/2022/02/04/o4sAFy.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o4sAFy.png"></a>
+<br/><br/><br/>
+
+<h2>Renkler</h2>
+<p>
+<br/>
+<hr/>
+Not: Metin biçimlerken başladığınız etiketi kapatmayı unutmayın.
+<hr/>
+Renkler :
+
+HTML dokümanlarında renkler ya İngilizce isimleriyle, ya da 16'lık sayı düzenindeki "hexadecimal" değerleriyle belirtilir.
+En sık kullanılan ve hemen hemen bütün tarayıcıların desteklediği 16 renk aşağıdakilerdir:
+</p>
+<br/>
+
+<a href = "https://imgyukle.com/f/2022/02/04/o4BYYb.png" rek = "lightbox" title ="Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o4BYYb.png"></a>
+<p>
+Örnek :<br/>
+
+<"body bgcolor="green"><br/>
+
+Bu örnekte sayfanın arkaplan rengi yeşil olur.<br/>
+<"body bgcolor="#008000"> aynı sonucu verir.
+<br/><br/>
+Örnek :<br>
+
+<"font color="#4B0082"> Font rengi "indigo" oldu. <"/font"> Etiketi kapattığımız için tekrar normale döndü.
+</p>
+
+
+<h2>LİNKLER</h2>
+<p>Linkler <"a">. . . <"/a"> etiketi içinde, href="" komutuyla belirtilir.</p>
+<h2>Örnek:</h2>
+<br>
+<hr>
+<"a href="https://nahitmenteseeml.meb.k12.tr" target="_blank">NMMTAL Ana Sayfası<"/a">
+<br><br/>
+<a href="https://nahitmenteseeml.meb.k12.tr" target="_blank">NMMTAL Ana Sayfası</a>
+<hr/>
+<br/>
+<p>
+Bu örnekte bir de target değişkeni verilmiştir. Adresi verilen web sayfasının başka bir pencerede açılmasını isterseniz target="_blank" komutunu eklemeniz gerekir. Aynı pencerede açılmasını isterseniz ilgili değişkeni target="_top" şeklinde yazabilirsiniz. Hiç bir şey yazılmazsa da sayfa aynı pencerede açılır.
+
+title değişkenini kullanarak da fare linkin üzerine geldiğinde gözükecek link açıklamasını ekleyebilirsiniz. Aşağıdaki örnekte fareyle linkin üzerine gelip beklerseniz Orta Doğu Teknik Üniversitesi yazısını göreceksiniz.
+</p>
+
+<p>
+<br><br/>
+<"a href="http://127.0.0.1:5000" target="_blank" title="Kişisel Sayfam için tıklayın" >Can Şahin<"/a">
+<br>
+<a href="http://127.0.0.1:5000" target="_blank" title="Kişisel Sayfam için tıklayın" >Can Şahin</a>
+</p>
+
+<h2>Sayfalar Arası Geçiş</h2>
+<br><br>
+<p>
+Eğer hazırladığınız dokümanlar arasında bir bağlantı kurmak istiyorsanıiz, <a> etiketini aşağıdaki gibi kullanmalısınız.
+
+<"a href="dosyaadi.HTML">Önceki sayfa<"/a">
+
+</p>
+
+<p>
+<h2>Bir e-posta adresine link vermek istiyorsanız:</h2>
+<"a href="mailto:mail@mail.com.tr">E-posta atmak için tıklayın. <"/a"><br>
+<a href="mailto:cansjns@gmail.com;">E-posta atmak için tıklayın. </a>
+</p>
+
+
+<br>
+<h2>Anchor Points(Tutturucu) </h3>
+<br>
+<p>
+Aynı doküman içinde bağlantı kurmak istersek tutturucu noktaları (anchor points) kullanırız. Tutturucu HTML sayfasında bir yer işaretidir. İsmi ile bir bölgeyi belirler ve bu tutturucuya bir link verebilirsiniz. Bu sayfadaki her konu başlığına bir tutturucu belirlenmiştir. Sayfa başındaki listede herhangi bir başlığa tıkladığınızda sayfa içindeki ilgili konu başlığına gider. Örnek olarak Resim Ekleme bölümüne gitmek için buraya tıklayabilirsiniz. Tutturucuların kullanımı aşağıdaki gibidir.
+
+Linkler başlığına aşağıdaki gibi bir tutturucu belirleriz.
+
+<"a name="link">Linkler<"/a">
+
+Sayfanın herhangi bir bölümünde yukarıda belirlediğimiz tutturucuya aşağıdaki gibi link veririz
+
+<"a href="#link">Linklere git<"/a">
+</p>
+<br><br><br>
+<h2>LİSTELER:</h2>
+<p><br>
+Üç çesit liste vardır:
+i. Sıralı Liste(Ordered List):
+</p>
+Örnek:<br/>
+
+<a href = "https://imgyukle.com/f/2022/02/04/o4K7BY.png" rek = "lightbox" title="Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o4K7BY.png"></a>
+<p>
+Örnekte görüldüğü gibi type değişkeni sıralı listenin türünü belirler. Type değişkeni için aşağıdaki değerlerden biri kullanılabilir:
+type: {1, a, A, I, i}
+Listeyi start değişkeni ile istediğimiz sayıdan baslatabiliriz:
+</p>
+<br>
+
+
+<h3>Örnek:</h3>
+<a href ="https://imgyukle.com/f/2022/02/04/o4q5eH.png" rek = "lightbox" title = "Örnek"><img src ="https://imgyukle.com/f/2022/02/04/o4q5eH.png"></a>
+<br><br>
+
+
+
+
+<h2>Sırasız Liste(Unordered List)</h2>
+<a href ="https://imgyukle.com/f/2022/02/04/o4WNuM.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o4WNuM.png"></a>
+<p>Benzer şekilde burada da type değişkeni sırasız listenin işaretini belirler. Type değişkeni için aşağıdaki değerlerden biri kullanılabilir:
+type:{square, disc, circle}</p>
+<br><br>
+
+<h2>Tanımlama Listeleri (Definition List):</h2>
+<p>Örnek:</p>
+<a href = "https://imgyukle.com/f/2022/02/04/o4WzZG.png" rek = "lightbox" title = "Örnek"><img src ="https://imgyukle.com/f/2022/02/04/o4WzZG.png"></a>
+<br><br/>
+<h2>TABLOLAR</h2>
+<p>
+Tablolar <"table>. . . . <"/table"> etiketleri arasında oluşturulur. <"table"> etiketinden sonra daima <"tr"> gelir. Her satır tanımlandığında <"tr">, her hücre tanımlandığında da <"td"> etiketi kullanılır.
+Örnek :
+</p>
+<a href = "https://imgyukle.com/f/2022/02/04/o4eNqt.png" rek ="lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o4eNqt.png"></a>
+<br><br>
+<h2>Bağımsız Değişkenler</h2>
+<p><br>
+<"table border="" cellpadding="" cellspacing="" width="" height="" bgcolor="" align="" valign=""><br>
+<"td height="" width="" bgcolor="" align="" valign="" colspan="" rowspan="">
+</p>
+
+<p>
+<ul>
+<li>border : Çerçevenin kalınlığını belirler. border="0" dersek tabloda çerçeve bulunmaz, bu miktarı arttırdıkça çerçevenin kalınlığı da artar.
+<li>cellpadding , cellspacing : Hücre elemanlarının sınırlara olan uzaklığı cellpadding, satır ve sütunların uzaklığı ise cellspacing değişkeni ile belirtilir.
+<li>bgcolor: <"table bgcolor="red"> şeklinde kullanarak bütün tablo ya da <"td bgcolor= "red"> şeklinde sadece tek bir hücre renklendirilir.
+<li>align : Hücredeki elemanın yatay konumunu belirler ve "right, left, center" opsiyonları ile kullanılır.
+<li>valign : Hücre elemanının düşey konumunu belirler ve opsiyonları "top, bottom, middle"dır.
+<li>colspan , rowspan : Aynı satırdaki hücreleri birleştirmek için colspan, aynı sütundaki hücreleri birleştirmek için de rowspan değişkeni kullanılır. Birleştirilen hücreye ait <td>. . </td> etiketi silinir.
+</ul>
+</p>
+<br><br>
+
+<h2>Örnek</h2>
+<a href = "https://imgyukle.com/f/2022/02/04/o4e9yf.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o4e9yf.png"></a>
+<br><br/>
+<h2>FORMLAR</h2>
+<P>
+Formlar <"form">. . . <"/form"> etiketleri arasında oluşturulur. Form bilgilerini action değişkeninin içine yazdığınız dosyaya veri olarak gönderebilirsiniz. Formlar sayesinde anket ve geribildirim uygulamaları hazırlayabilirsiniz. 
+Örnek:
+</P>
+<a href ="https://imgyukle.com/f/2022/02/04/o4tWfH.png" rek = "lightbox" title ="Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o4tWfH.png"></a>
+<br><br><br>
+<div>
+<form name="kimlik" action="gonder.html" method="get">
+Isim/soyad : <input type="text" size="10" name="isim"><br>
+Doğum yeri : <input type="text" size="10" name="dogumyer" ><br>
+Doğum tarihi : <input type="text" size="10" name="dogumtarih" ><br>
+Cinsiyet : <input type="radio" name="cins" value="erkek" > Erkek <input type="radio" name="cins" value="kiz"> Kiz<br>
+&nbsp;Hobiler:<br>
+<input type="checkbox" name="muzik" >&nbsp;Müzik dinlemek<br>
+<input type="checkbox" name="manti" >&nbsp;Manti açmak<br>
+<input type="checkbox" name="bungee" >&nbsp; Bungee Jumping<br>
+<input type="checkbox" name="aikido">&nbsp;Aikido<br>
+<input type="checkbox" name="halay">&nbsp;Halay çekmek<br>
+<input type="checkbox" name="diger">&nbsp;Diğer :<br>
+<textarea rows="4" cols="30" name="diger"></textarea><br>
+Şifrenizi giriniz:<br>
+<input type="Password" size="15"><br>
+<input type="submit" value="GÖNDER"> <input type="reset" value="SIL">
+</form>
+</div>
+
+
+<p>
+<ul>
+<li>action: Formun gönderileceği adresi belirtir.
+
+<li>method="get":Formdaki bilgiler başka bir dosyaya gönderilecekse kullanılır.
+
+<li>method="post":Formdaki bilgiler bir adrese postalanacaksa kullanılır.
+
+<li>type="text" : Tek satırlık bir metin alanı açar.
+
+<li>size="" :Bu metin alanının boyutunu belirler.
+
+<li>type="checkbox" : Çok seçenekli bir sorunun birden fazla yanıtını almamızı sağlar.
+
+<li>type="radio" : Tek seçenekli bir sorunun tek yanıtı alınır.
+
+<li>type="submit" : formu action'la belirtilen dosyaya yönlendiren bir buton yaratır.
+
+<li>type="submit" : formu action'la belirtilen dosyaya yönlendiren bir buton yaratır.
+
+<li>type="password" : Bir password alanı olusturur. Buraya girilen her karakter * şeklinde görünür.
+
+<li><   textarea rows="" cols=""> :type="text" gibi tek satırlı değil de çok satırlı bir metin alanı istiyorsak bu etiketi kullaniriz. cols metin alanının uzunluğunu, rows ise yüksekliğini pixel cinsinden verir.
+
+</ul>
+</p>
+<br><br>
+<h2>Listeleme</h2>
+<p>
+Select ve option etiketlerini kullanarak seçimlik liste (menü) oluşturabiliriz. Option etiketi ile belirtilen her bir değer listenin bir elamanını oluşturur ve fareyle seçilen bu elemanlardan biri select etiketinde belirtilen değişkenin değeri haline gelir.
+</p>
+<br><br>
+<h3>Örnek:</h3>
+<a href ="https://imgyukle.com/f/2022/02/04/o4FpKs.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o4FpKs.png"></a>
+<br><br>
+<div>
+<select name="otolar">
+<option>Alfa Romeo</option>
+<option>BMW</option>
+<option>Peugeot</option>
+<option>Renault</option>
+<option>Seat</option>
+<option>Lada</option>
+</select>
+</div>
+
+
+<br><br><br><br><br><br><br><br><br>
+</i>
+</font>
+</div>
+{% endblock body %}

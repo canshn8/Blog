@@ -1,0 +1,150 @@
+{% extends "desinger.html" %}
+
+
+{% block body %}
+<div style = "margin-top: 100px;" class = "container">
+<font size = "5">
+<i>
+
+<h1>Bootstrap</h1>
+<br><br><br>
+
+<h2>Bootstrap'e Giriş</h2>
+<br><br>
+<p>
+Bootstrap’ın temel tasarım mantığını şöyle özetleyebiliriz. Bir satır 12 eşit sütuna bölünerek bu sütunların genişlikleri farklı cihazlara göre esnetilip daraltılıyor. Böylelikle farklı cihazlara göre bu sütunların görüntülenme şekli değiştiriliyor. Örneğin geniş ekranlı bir cihaz için 3lü sütun bir yapı düşünüyorsunuz. Bootstrap mantığı nasıldı? Satır 12 parçaya bölmek. O zaman 3lü sütun yapabilmek için her bir sütun bu 12li sütunlardan 4er tane kapsamalı. Yani kod ile bunu göstermek gerekirse aşağıdaki gibi olmalı:
+</p>
+<br>
+<a href ="https://imgyukle.com/f/2022/02/05/o6fTJU.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o6fTJU.png"></a>
+<br><br>
+<p>
+<br><br>
+.col-md-1 class’ı 12ye bölünen satırın her bir sütununu ifade ediyor. Satırımızı kaça bölmek istiyorsak  bu classtan faydalanıyoruz. Farklı bir örnek verecek olursak satırı iki eşit sütuna bölmek istiyorsak ilk sütuna .col-md-6 ve ikinci sütuna da .col-md-6  classlarını veriyoruz. Toplamda 12 yapıyor bu da satırın 2 eşit parçaya bölünmesini sağlıyor. Bu oranları değiştirerek (toplamda 12 olacak şekilde) sütun genişliklerini ayarlayabilirsiniz. Aşağıdaki görselden satırların class’larla nasıl sütunlara bölündüğünü daha iyi anlayabilirsiniz:
+</p>
+<br><br>
+<a href = "https://imgyukle.com/f/2022/02/05/o6fGoR.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o6fGoR.png"></a>
+<br><br><br>
+
+
+
+<h3>Özellikle sütunların cihazlara göre duyarlı olmasını aşağıdaki class’lar ile sağlayabiliriz:<br>
+Masaüstü bilgisayarlar için kullanılan class .col-md-<br>
+Cep telefonları için kullanılan class: . col-xs-<br>
+Tabletler için kullanılan class: .col-sm-</h3>
+<br><br><br>
+
+
+<p>
+Farklı cihazlar için bu sütunların farklı davranmasını istediğimizde masaüstü için bu şekilde tablet için bu şekilde mobil telefonlar için bu şekilde genişlikte davran diyerek aynı class etiketi içine bu genişlikleri birlikte verebilirsiniz. Mesela masaüstü bilgisayarlar için .col-md-3 class’ı ile 4e böldüğünüz satırları cep telefonlarında 2 tane 2’li sütun şeklinde görünsün isteyebiliriz. Yani masaüstünde 4lü sütun görünen bir satır, cep telefonlarında classlar kullanılarak 2 satıra dönüştürülüp her bir satırda 2li sütun görünecek şekilde davranmasını sağlayabiliriz.
+Bunu yapmak için class yapımızı aşağıdaki şekilde yapıyoruz:
+</p>
+<br><br>
+
+<a href = "https://imgyukle.com/f/2022/02/05/o6f336.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o6f336.png"></a>
+<br><br><br>
+
+<p>
+Sitemizi düşündüğümüz senaryoya göre hazırlamaya başlayalım. Bootstrap için gerekli dosyaları <a href= "http://getbootstrap.com">https://getbootstrap.com</a>&nbsp;adresinden indiriyoruz, gerekli tüm .css, .js vb dosyalar burada var.
+</P>
+<br>
+<a href = "https://imgyukle.com/f/2022/02/05/o60IUA.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o60IUA.png"></a>
+<br><br>
+
+<p>
+bootstrap-3.0.1-dist.zip dosyası sayfanız için olmazsa olmazları barındırıyor. bootstrap-3.0.1.zip dosyası ise Bootstrap’ın tüm dosyalarını (tüm script dosyaları, cssler, less dosyaları, font dosyaları vb) barındırıyor. Eğer ana şablonu oluşturmakla uğraşmak istemiyorsanız indirdiğiniz dosyaların içinde örnek sayfalar var. Bu örnek sayfalardan birini alarak kendi şablonunuz olarak kullanabilirsiniz. Tasarımları yaparken zaten bu örnek sayfaları sık sık kullanacaksınız.
+Şimdi örnek bir sayfayı birlikte yapalım. Yapacağımız sitemizde senaryo olarak da en üstte header alanında ana menü onun altında carousel, onun altında 3lü sütunda bir alan ve onun altında da footer olsun. bootstrap-3.0.1-dist.zip ve bootstrap-3.0.1.zip dosyalarını zipten çıkaralım. EXAMPLES klasöründeki NAVBAR klasöründeki örneği şablonum olması için index.html dosyasını kopyalayıp bootstrap-3.0.1-dist klasörünün içine yapıştırıyorum. Fakat direk açtığımda düzgün tasarım görünmeyecektir çünkü css dosyası doğru yerde linki değil bunu düzeltmem gerekiyor. Kopyaladığım index.html içindeki css dosyasının ve bootstrap js dosyasının yolunun başındaki iki üst klasörde olduğunu belirten kısmı siliyorum ve kaydediyorum. Dosyaların yolu aşağıdaki gibi olmalı. Bootstarp js dosyası dokümanın sonundadır.
+</p>
+<br><br>
+
+<h2>CSS dosyası yolu: <"link href=”dist/css/bootstrap.css” rel=”stylesheet”></h2>
+<br><br>
+<h2>Bootstrap js dosyası yolu:  <"script src=”dist/js/bootstrap.min.js”><"/script"></h2>
+<br><br>
+
+
+<p>
+Dosyayı açtığımda şablonu görebilirim artık. Header alanımız hazır. Oradaki .jumbotron divi bizim için gerekli değil onu siliyoruz.
+</p>
+<br><br>
+
+<a href = "https://imgyukle.com/f/2022/02/05/o6djBn.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o6djBn.png"></a>
+<br>
+<a href = "https://imgyukle.com/f/2022/02/05/o6dBPH.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o6dBPH.png"></a>
+<br>
+
+<p>
+Carousel’de yer alan her bir slide koddaki aşağıdaki kısım içine yerleştirilmeli. Yani her bir slide için aşağıdaki kodu çoğaltmanız gerek. Bu tip düzenlemeleri temek html bilsine sahipseniz çok kolaylıkla yapabileceğiniz düzenlemelerdir.
+Her bir slide için gerekli kod aşağıdaki gibidir. Aktif olan slide için gerekli olan .active classı sadece ilk slide divinde olmalıdır diğerlerinden silmeniz gerekir. Ayrıca imajlar için dosya yolunu ve slide içinde kullanılacak metni de kodda düzenlemelisiniz.
+Her bir slide için gerekli kod:
+</p>
+<br><br>
+
+<a href = "https://imgyukle.com/f/2022/02/05/o67GoH.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o67GoH.png"></a>
+<br><br>
+
+<p>Üç tane slide olan olan bir carousel için kod şu şekilde olmalı:</P>
+<br><br>
+
+<a href = "https://imgyukle.com/f/2022/02/05/o674GP.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o674GP.png"></a><br>
+<a href = "https://imgyukle.com/f/2022/02/05/o6AQhj.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o6AQhj.png"></a>
+<br><br>
+
+<p>
+Carousel kodlarımızdan sonra sayfamızın ekran görüntüsü aşağıdaki gibi oldu:
+</p>
+
+<br><br>
+
+<a href = "https://imgyukle.com/f/2022/02/05/o6AHyS.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o6AHyS.png"></a>
+<br><br>
+
+<p>
+Sırada 3lü sütun var. Bunun için Bootstrap’ın sitesindeki Components > Thumbnail > Custom Content kodunu (aşağıdaki) kopyalayıp alıyoruz:
+</p>
+<br><br>
+
+
+<a href = "https://imgyukle.com/f/2022/02/05/o6AXNt.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o6AXNt.png"></a>
+<br><br>
+
+<p>
+3lü sütun istediğimiz için row div’inin içindeki div’i çoğaltıyoruz ve kodumuz aşağıdaki gibi oluyor:
+</p>
+<br><br>
+
+<a href = "https://imgyukle.com/f/2022/02/05/o9PRJ8.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o9PRJ8.png"></a>
+<br>
+<a href = "https://imgyukle.com/f/2022/02/05/o9PrHH.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o9PrHH.png"></a>
+<br><br>
+
+<p>
+Bootstrap’ta dikkat etmemiz gereken bir konu var. Bu da imajların en boy ölçülerini yazmıyoruz. Bootrap imajları responsive olacak şekilde kendisi yöneterek büyütüp küçültüyor.<br>
+3lü sütunlarımız da tamam. Ekran görüntüsü aşağıdaki gibi oldu:
+</p>
+<br><br>
+
+
+<a href = "https://imgyukle.com/f/2022/02/05/o9PLoQ.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o9PLoQ.png"></a>
+<br>
+<p>
+<br>
+Son olarak footer alanımızı ekleyelim. Bunun için indirdiğiniz EXAMPLES klasöründeki Sticky Footer klasöründeki örnekteki aşağıdaki kodu alıyoruz ve sayfamızda görünmesini istediğimiz yere ekliyoruz:
+</p>
+<br><br>
+<a href = "https://imgyukle.com/f/2022/02/05/o9PhbP.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o9PhbP.png"></a>
+<br><br>
+
+<p>Ve sayfamız bitti. Çok kolay ve pratik bir şekilde sayfamızı oluşturduk. Sayfamızın son halinin ekran görüntüsü aşağıdaki gibi:</p>
+<br><br>
+
+<a href = "https://imgyukle.com/f/2022/02/05/o9Pb51.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o9Pb51.png"></a>
+<br>
+
+<br><br><br><br>
+<p>Cssde'ki diğer konuları görmek için &nbsp;<a href="/Css">Css</a> adresine gidin</p>
+
+<br><br><br>
+</i>
+</font>
+</div>
+{% endblock body %}

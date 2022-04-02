@@ -1,0 +1,164 @@
+{% extends "desinger.html" %}
+
+
+{% block body %}
+<div style = "margin-top: 100px;" class ="container">
+<font size = "5">
+<i>
+
+<h1>Foundation</h1>
+<br><br><br>
+
+<h2>Paket Yöneticileri ile yükleyin</h2>
+<p>
+Foundation npm, Bower, Meteor ve Composer'da mevcuttur. Paket, tüm kaynak Sass ve JavaScript dosyalarının yanı sıra derlenmiş CSS ve JavaScript'i sıkıştırılmamış ve sıkıştırılmış tatlarda içerir.
+<br>
+<hr>
+npm install foundation-sites
+<hr/>
+<hr>
+yarn add foundation-sites
+<hr/>
+</p>
+<br><br>
+
+
+
+<p>Ardından yeni bir Vakıf projesi oluşturmak için kullanın:
+<br>
+<hr>
+foundation new
+<hr/>
+<br>
+"Siteler için Temel"i seçtikten sonra, Foundation CLI size hangi şablonu kullanmak istediğinizi soracaktır. Şunlar arasından seçim yapabilirsiniz:
+</p>
+<br><br><br>
+
+
+<h2>Temel şablon</h2>
+<br>
+<p>Yeni başlayanlar
+için önerilir Foundation'ı kullanmaya başlamak için temel bir şablon. O içerir:</p>
+
+<ul>
+<li>Foundation for Sites önceden yapılandırılmış.
+<li>Sass derlemesi
+<li>SASS/SCSS dosyalarınızı CSS'ye dönüştürmek için bir araç.
+<li>Başlangıç ​​HTML dosyası
+<li>Temel Foundation bileşenini kullanmanıza yardımcı olacak temel bir dosya (yeni XY ızgarası dahil!)
+</ul>
+
+
+
+<br><br><br>
+
+
+
+<h2>ZURB şablonu</h2>
+<br>
+<p>Deneyimli (veya meraklı) kullanıcılar için önerilir
+Foundation ve aşağıdakileri içeren bir oluşturma sürecini içeren daha gelişmiş bir proje:</p>
+
+<ul>
+<li>Panini ile gidon HTML şablonları
+<li>Sass derleme ve önek
+<li>Web paketi ile birlikte JavaScript modülü
+<li>Dahili BrowserSync
+<li>CSS, Javascript ve Görüntü sıkıştırma ile üretim oluşturma
+</ul>
+
+
+<br><br><br>
+<h2>Foundation 5 kullanıcıları</h2>
+<br>
+<p>
+Makinenizde zaten Foundation 5 CLI varsa, komut satırı ortamınızın nasıl yapılandırıldığına bağlı olarak komutlardan yalnızca birine erişebilirsiniz.
+<br>
+Foundation 5 CLI'yi kaldırmak için <u>gem uninstall foundation</u>. Foundation 6 CLI'yi test ettikten sonra, eski CLI'ye geri dönmek için onu kaldırmak istiyorsanız <u>npm uninstall foundation-cli --global</u>.
+</p>
+
+<br><br><br>
+
+<h2>Windows kullanıcıları</h2>  node-gyp aracı tarafından gerekli olduğundan, düğüm ortamınızda python v2.7'nin mevcut olduğundan emin olun. Bunu başarmanın iki yolu var
+<br><br>
+<p>
+<a href ="https://github.com/felixrieseberg/windows-build-tools">Windows-build-araçlarını</a> kurun (önerilir) ve python'u daha sonra şuradan erişilebilir hale getirin:npm config set python "%USERPROFILE%\.windows-build-tools\python27\python.exe"
+<br><br>
+<a href= "https://www.python.org/downloads/">Python</a>'u kurun (önerilmez) ve sistem ortamı değişkenlerinize ekleyin
+İlk yol, python v2.7'yi henüz yüklemediyseniz, makinenizi düğüm ortamı dışında etkilemediği için önerilir. Python v2.7'yi zaten yüklediyseniz, elbette her iki yolu da atlayabilir ve hemen Foundationc-cli'yi kullanmaya başlayabilirsiniz.
+</p>
+
+
+<br><br>
+
+
+<p>
+<hr>
+<!-- Compressed CSS -->
+<"link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+<hr/>
+<br><br>
+<hr>
+<!-- Compressed JavaScript -->
+<"script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+<hr/>
+</p>
+
+<br><br><br>
+
+<p>
+Foundation 6.4'ten itibaren, esnek varsayılan olarak etkinleştirilmiştir ve yalnızca yeni XY Izgarası mevcuttur . Ancak, geriye dönük uyumluluk ve en yaygın kullanım durumları için diğer CSS sürümleri mevcuttur. Diğer kullanımlar ve gelişmiş özelleştirme için, Foundation'ı özel ayarlarla oluşturmanızı öneririz (diğer kurulum yöntemlerine bakın).
+</p>
+<br><br>
+
+<p>
+<hr>
+<!-- foundation-float.min.css: Compressed CSS with legacy Float Grid -->
+<"link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-float.min.css" crossorigin="anonymous">
+<hr>
+<br>
+<hr>
+<!-- foundation-prototype.min.css: Compressed CSS with prototyping classes -->
+<"link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-prototype.min.css" crossorigin="anonymous">
+<hr>
+<br>
+<hr>
+<!-- foundation-rtl.min.css: Compressed CSS with right-to-left reading direction -->
+<"link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-rtl.min.css" crossorigin="anonymous">
+<hr>
+</p>
+<br><br><br>
+
+
+
+
+<h2>HTML Başlangıç ​​ Şablonu</h2>
+<br>
+<p>
+Bu HTML şablonuyla başlayın ve ihtiyaçlarınıza göre uyarlayın. .no-jsSınıfı htmlşablonunuzun etiketine eklediğinizden emin olun . Bu sınıfın eklenmesi , bir dizi temel bileşen için stillendirilmemiş içeriğin flash'ını önler.
+</p>
+<br><br><br>
+
+<a href = "https://imgyukle.com/f/2022/02/05/o9RP2o.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/05/o9RP2o.png"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+<p>Cssde'ki diğer konuları görmek için &nbsp;<a href="/Css">Css</a> adresine gidin</p>
+
+<br><br><br><br>
+</i>
+</font>
+</div>
+{% endblock body %}

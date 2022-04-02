@@ -1,0 +1,97 @@
+{% extends "desinger.html" %}
+
+{% block body %}
+<div style = "margin-top: 100px;" class =  "container">
+<font size = "6">
+<i>
+<h1>VUE örnek sayfa</h1>
+<br><br>
+
+<h3>Kütüphaneyi Dahil Edelim</h3>
+<hr>
+<p>
+<a href="https://miro.medium.com/max/1224/1*UgfRIuhNIcHTzB1HoOp7Ow.jpeg" rel="lightbox" title="Örnek"><img src ="https://miro.medium.com/max/1224/1*UgfRIuhNIcHTzB1HoOp7Ow.jpeg"></a>
+<br>
+Ardından sayfamıza bir tane div ekliyoruz. Örnekte de görüldüğü üzere div id değeri “app” olarak tanımlanmış. Yine div içinde 2 tane <p> tag kullanılarak süslü parantezler içinde username ve city değişkenleri ekrana yazdırılmış.
+</p>
+<br><br>
+
+<p>
+<a href="https://miro.medium.com/max/595/1*4D7yrggmvAElEduLHpU01g.jpeg" rel="lightbox" title="Örnek"><img src = "https://miro.medium.com/max/595/1*4D7yrggmvAElEduLHpU01g.jpeg"></a>
+<br>
+Şimdi gelelim bu değişkenleri veri ile doldurmaya. Aşağıdaki tagleri arasında yazdığımız vue class’ı bir obje almaktadır. Bu objenin ilk prop’u “el” (element) dir. Bu prop’a tanımladığımız “app” ile div id’si örtüşmelidir. (Aksi durumda çalışmaz) İkinci prop’a baktığımızda data’yı görüyoruz. İşte div içine göndereceğimiz data’yı buraya yazıyoruz.<br><br>
+</p>
+<br><br>
+
+<p>
+<a href="https://miro.medium.com/max/603/1*DSjlKkUFPrmwc-z9OVZ5wQ.jpeg" rel="lightbox" title="Örnek"><img src = "https://miro.medium.com/max/603/1*DSjlKkUFPrmwc-z9OVZ5wQ.jpeg"><br></a>
+Evet geldik makalemizin sonuna. Kodumuzun son halini .html olarak kaydettikten sonra bilgisayarınızda çalıştırdığınızda aşağıdaki çıktıyı alabilirsiniz.
+<br>
+</p>
+<br>
+
+
+<p>
+<a href="https://miro.medium.com/max/134/1*kUs7rkEOw7eOZ4iiyX-OuA.jpeg" rel="lightbox" title="Örnek"><img src="https://miro.medium.com/max/134/1*kUs7rkEOw7eOZ4iiyX-OuA.jpeg"></a>
+<br>
+Ekrana Çıktı Veren Basit Bir Proje Yaptık.
+</p>
+<br>
+
+<p>
+<a href="https://imgyukle.com/f/2022/02/03/ob8dvA.png" rel="lightbox" title="Örnek"><img src = "https://imgyukle.com/f/2022/02/03/ob8dvA.png"></a>
+<br><br>
+Komut dosyasını başarıyla HTML dosyamıza ekledikten sonra global bir vue işlevine erişebiliriz.
+
+Vue işlevi yeni bir örnek oluşturmak için kullanılır.
+
+Her vuejs uygulaması bir vue örneği oluşturarak başlar. Bir nesneyi Vue işlevine ileterek bir vue örneği oluşturalım.
+
+Vue library script etiketinden sonra aşağıdaki kodu ekleyin.
+</p><br><br>
+
+
+<a href="https://imgyukle.com/f/2022/02/03/oblMHQ.png" rel="lightbox" title="Örnek"><img src = "https://imgyukle.com/f/2022/02/03/oblMHQ.png"></a>
+<br><br>
+<p>
+el: #app ekledik, vue örneğinin id değeri app ismine sahip olan HTMLdiv etiketimizle bir ilişki kurduğu anlamına geliyor.
+</p>
+<br><br>
+
+<h3>Veri ve Etkileşim</h3>
+<p>
+Vue örneği, Vue reaktivite sistemine eklenen data özelliği içine eklediğimiz her şeyi data adı verilen başka bir özelliği de kabul eder.
+
+data özelliğini Vue örneğimize ekleyelim.
+</p>
+
+<a href="https://imgyukle.com/f/2022/02/03/obtrQh.png" rel="lightbox" title="Örnek"><img src = "https://imgyukle.com/f/2022/02/03/obtrQh.png"></a>
+<br><br>
+<h3>Bağlama</h3>
+<p>
+Verileri Vuejs’de bağlama yapmak için  çift süslü parantez kullanmamız gerekir. div içindeki h1 etiketinizi aşağıdaki kodla güncelleyin.
+</p>
+<br><br>
+
+
+<h3>Kodumuzun Çıktısı</h3>
+<a href="https://imgyukle.com/f/2022/02/03/obte56.png" rel="lightbox" title="Örnek"><img src ="https://imgyukle.com/f/2022/02/03/obte56.png"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+</i>
+<br><br>
+<br><br>
+<br><br>
+</font>
+</div>
+{% endblock body %}

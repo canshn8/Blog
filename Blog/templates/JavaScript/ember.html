@@ -1,0 +1,88 @@
+{% extends "desinger.html" %}
+
+{% block body %}
+<div style = "margin-top: 100px;" class ="container">
+<font size = "6">
+<i>
+<h2>EmberJs Kurulum İçin Aşağıdaki Kodu Kopyalayıp Komut Satırında Çalıştırın veya Linke Giderek Setup Halinde İndirin</h2>
+<br><br>
+Kod↓
+<hr>
+<p>winget install --id Git.Git -e --source winget<br>
+<hr>
+<br>
+Setup↓
+<hr>
+<a href = "https://git-scm.com/download/win">EmberJs Setup İndirmek İçin</a>
+<hr>
+</p>
+<br><br>
+
+<h3>İndiğine Emin Olmak İçin Aşağıdaki Kodları Kullanın ↓</h3>
+<p><hr>ember -v<hr></p>
+<br>
+<p>Yukarıdaki komutu çalıştırdıktan sonra, aşağıdakine benzer bir şey gösterecek</p>
+<ul>
+<li>ember-cli: 2.10.1
+<li>node: 0.12.7
+<li>os: win32 ia32
+</ul>
+<br><br>
+
+<h3>Uygulama Oluşturma</h3>
+<p>
+
+Ember.js kullanarak basit bir uygulama oluşturalım. Öncelikle uygulamalarınızı oluşturduğunuz bir klasör oluşturun. Örneğin, "emberjs-app" klasörünü oluşturduysanız, bu klasöre şu şekilde gidin:
+<br>
+<hr>cd ~/emberjs-app<hr>
+<br>
+"Emberjs = app" klasörünün içinde, yeni komutu kullanarak yeni bir proje oluşturun 
+<br>
+<hr>ember new demo-app<hr>
+<br>
+Bir proje oluşturduğunuzda, yeni komut dosyalar ve dizinlerle aşağıdaki dizin yapısını sağlar -
+<br><a href="https://imgyukle.com/f/2022/02/03/obAMtQ.png" rel="lightbox" title="Örnek"><img src = "https://imgyukle.com/f/2022/02/03/obAMtQ.png"></a>
+</p>
+<br><br>
+<p>
+<ul>
+<li>app - Modellerin, rotaların, bileşenlerin, şablonların ve stillerin klasörlerini ve dosyalarını belirtir.<br><br>
+
+<li>bower_components / bower.json- HTML, CSS, JavaScript, resim dosyaları vb. Bileşenleri yönetmek için kullanılır ve npm kullanılarak kurulabilir. Bower_components dizini tüm Bower bileşenlerini içeren ve bower.json Ember Ember CLI Shims ve QUnit tarafından yüklenen bağımlılıkları listesini içerir.<br><br>
+
+<li>config- Bir uygulamanın ayarlarını yapılandırmak için kullanılan environment.js dizinini içerir .<br><br>
+
+<li>dist - Uygulamayı oluştururken dağıtılan çıktı dosyalarını içerir.<br><br>
+
+<li>node_modules / package.json- NPM, projelerdeki bağımlılıkları kurmak, paylaşmak ve yönetmek için kullanılan Node.js için bir düğüm paketi yöneticisidir. Package.json dosyası, bir uygulamanın geçerli npm bağımlılıklarını içerir ve listelenen paketler,node_modules dizin.<br><br>
+
+<li>public - Görüntüler, yazı tipleri vb. Varlıkları içerir.<br><br>
+
+<li>vendor - JavaScript, CSS gibi ön uç bağımlılıklarının Bower go tarafından kontrol edilmediği bir dizindir.<br><br>
+
+<li>tests / testem.js- otomatik testler klasör testleri ve test atlet altında depolanır testem Kor CLI en düzenlenmektedir; testem.js .<br><br>
+
+<li>tmp - Ember CLI'nin geçici dosyalarını içerir.<br><br>
+
+<li>ember-cli-build.js - Ember CLI kullanılarak uygulamanın nasıl oluşturulacağını belirtir.<br><br>
+</ul>
+</p>
+
+<h3>Uygulamayı çalıştırmak için yeni oluşturulan proje dizinine gidin</h3> 
+<p><li>cd demo-app</p><br><br>
+
+<h3>Yeni projeyi oluşturduk ve aşağıda verilen komut ile çalışmaya hazırdır</h3> 
+<p><li>ember server</li></p><br><br>
+
+<h3>Şimdi tarayıcıyı açın ve şuraya gidin: http://localhost:4200/. Ember Welcome sayfasını aşağıdaki resimde gösterildiği gibi alacaksınız </h3>
+<a href="https://imgyukle.com/f/2022/02/03/obdeW6.png" rel="lightbox" title="Örnek"><img src = "https://imgyukle.com/f/2022/02/03/obdeW6.png"></a>
+
+
+<br><br><br><br>
+<p>JavaScriptde'ki diğer konuları görmek için &nbsp;<a href="/JavaScript">JavaScript</a> adresine gidin</p>
+
+<br><br><br>
+<i>
+</font>
+</div>
+{% endblock body %}

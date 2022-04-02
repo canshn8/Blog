@@ -1,0 +1,408 @@
+{% extends "desinger.html" %}
+
+{% block body %}
+<div style="margin-top: 50px;"  class =" container">
+<font size = "6">
+<h1>Numpy</h1>
+<br><br>
+<h3>Numpy Kütüphanesini İndirmek İçin.<h3>
+<hr>
+<p>pip install numpy<br>
+<hr>
+<br>
+Komutlarını Kullanarak Kütüphaneyi Yüklüyoruz.<br>Yüklenme Başarısızsa Komut İstemcisine Gidip 'python' yazın. Herhangi Bir Sonuç Dönmediyse Python Düzgün Kurulmamıştır.
+</p>
+
+<br>
+<p>
+<hr>
+import numpy as np
+<hr>
+
+Numpy modülümüzü dahil ettik. as modülünü  kullanarak numpy modülünü  np adlı anahtar sözcüğüne aktardık. 
+</p>
+<br><br>
+<p>Numpy Listesi Oluşturalım<br>Python 'un kendi listesiyle Numpy'nin listesi arasında pek bir fark yok ancak  Numpy modülünün amacı matematiksel işlemler olduğu için bilimsel işlemler için daha hızlı ve pratik olacaktır</p>
+<br>
+
+
+
+<h3>Liste Oluşturma = np.array()</h3>
+<p>
+<hr>
+<div class ="jumbotron">
+
+>>>array = np.array([1.2 , 9 , 10])
+<br>
+>>>print("Numpy")
+<br>
+>>>print(array)
+<br>
+Numpy
+<br>
+[1.2 ,9 ,10]
+<br>
+</p>
+</div>
+<hr>
+<br>
+
+<h3>Dizi Boyutunu Bulmak = np.ndim()</h3>
+<hr>
+<p>
+<div class ="jumbotron">
+
+>>>array = np.array([0, 6, 4, 13, 43, 5.4])
+<br>
+>>>print(array.ndim)
+<br>
+1
+</p>
+</div>
+<hr>
+<br>
+
+
+
+<h3>Satır ve Hane Sayısını Bulmak = np.shape()<h3>
+<p>
+<hr>
+<div class ="jumbotron">
+
+>>>array = np.array([0, 6, 4, 13, 43, 5.4])
+<br>
+>>>print(array.shape)
+<br>
+6
+<br>
+>>>array_2 = np.array([[0, 6, 4, 13, 43, 5.4]])
+<br>
+>>>print(array_2.shape)
+<br>
+(1, 6)
+</div>
+</p>
+<br>
+<hr>
+
+
+<h3>Satır ve Sütun Değiştirmek = np.reshape()</h3>
+<p>
+<hr>
+<div class ="jumbotron">
+
+>>>array = np.array([0, 1, 2, 3, 4, 5, 6,7])
+<br>
+>>>print(aray.reshape(1,8))
+<br>
+array([[0, 1, 2, 3, 4, 5, 6, 7]])
+<br><br>
+>>>array_2 = np.array([0, 1, 2, 3, 4, 5, 6, 7])
+<br>
+>>>print(aray.reshape(8,1))
+<br>
+array<br>
+([[0],<br>
+&nbsp;  [1],<br>
+&nbsp;  [2],<br>
+&nbsp;  [3],<br>
+&nbsp;  [4],<br>
+&nbsp;  [5],<br>
+&nbsp;  [6]])<br>
+&nbsp;  [7]])
+<br><br>
+>>>array_3 = np.array([0, 1, 2, 3, 4, 5, 6, 7])
+<br>
+>>>print(aray.reshape(4,2))
+<br>
+&nbsp;[[0 1]<br>
+&nbsp; [2 3]<br>
+&nbsp; [4 5]<br>
+&nbsp; [6 7]]
+<br><br>
+>>>array_4 = np.array([0, 1, 2, 3, 4, 5, 6, 7])
+<br>
+>>>print(aray.reshape(2,4))
+<br>
+&nbsp;[[0 1 2 3]
+&nbsp; [4 5 6 7]]
+</div>
+</p>
+<br>
+<hr>
+
+
+<h3>Sayı Üretmek  = np.arange()</h3>
+<hr>
+<p>Bu  fonksiyon python 'daki <a href="/Python-Range">range()</a>  fonksiyonuna benzer bir fonksiyondur 
+ Belirtilen başlangıç değerinden başlayıp, her seferinde adım sayısı kadar arttırarak ,bitiş değerine kadar olan sayıları bulunduran bir numpy dizisi dödürür.
+Not: Bitiş değerinin diziye dahil edilmediğine dikkat edelim.
+Genel kullanım :
+np.arange(başlangıç,bitiş,adım sayısı)
+np.arange(bitiş) → bu kullanımda default başlangıç değeri 0 , adım sayısı ise 1 olarak kabul edilir. Yani aslında yukarıda ki formatta ifade edecek olursak np.arange(0,bitiş,1) şeklinde yazabiliriz.
+<br><br>
+<hr>
+<h4>Bu Fonksiyon İçin Herhangi Bir Değişken Tanımlamaya Gerek Yoktur.<h4>
+<hr>
+<div class ="jumbotron">
+>>>np.arange(0, 20 ,5)<br>
+array([ 0,  5, 10, 15])<br><br>
+>>>np.arange(20)<br>
+array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
+       17, 18, 19])
+       <br><br><br>
+<h4>!Eğer sadece bir değer verirseniz program onu bitiş olarak algılayacaktır.<h4><br>
+>>>np.arange(6)<br>
+array([ 0,  1,  2,  3,  4,  5])
+</div>
+<hr>
+</p>
+<br>
+
+
+
+
+<h3>Dizinin Elemanlarını Ters Çevirmek = array[:::]</h3>
+<hr>
+<p>
+Diziden ihtiyyacımız olan eleman veya elemanları nasıl elde edeceğimize bakalım
+Genel kullanım : ndarray[rows,columns]
+Not: ndarray[:,:] → buradaki “:” kullanımı tüm satır ve sütunları seçmemizi sağlar.<br>
+<div class ="jumbotron">
+>>> aray =np.array([0, 1, 2, 3, 4, 5, 6, 7])<br>
+>>> aray[::-1]<br>
+array([7, 6, 5, 4, 3, 2, 1, 0])<br>
+</div>
+<hr>
+</p>
+<br>
+
+
+
+
+
+<h3>0'lı Listeler  Oluşturmak = np.zeros()</h3>
+<p>
+<hr>
+np.zeros() →Bu fonksiyon belirtilen satır ve sütuna sahip 0'lardan oluşan bir matris döndürür.<br>
+<div class ="jumbotron">
+>>>>>> np.zeros((4,4))<br>
+array([[0., 0., 0., 0.],<br>
+       [0., 0., 0., 0.],<br>
+       [0., 0., 0., 0.],<br>
+       [0., 0., 0., 0.]])<br>
+
+
+</div>
+<hr>
+</p>
+<br>
+
+
+
+
+<h3>1'li Listeler Oluşturmak = np.ones()</h3>
+<p>
+<hr>
+<div class= "jumbotron">
+<h4>!(Kaç Tablo olacağı,Kaç Satır Olacağı,Satır Uzunluğu)<h4><br>
+np.ones(): zeros() fonksiyonuna benzer şeklide verilen büyüklükte 1'lerden oluşan bir matris döndürür.<br><br>
+>>>np.ones((2,2,2))<br>
+array([[[1., 1.],<br>
+        [1., 1.]],<br>
+<br>
+       [[1., 1.],<br>
+        [1., 1.]]])<br>
+</div>
+<hr>
+</p>
+<br>
+
+
+
+<h3>Satır ve Sütun'u Aynı Orantıda Liste Oluşturun = np.eye()</h3>
+<p>
+<hr>
+<div class="jumbotron">
+Bu fonksiyon size satır ve sutunu girdiğiniz değere göre  aynı veren bir foksiyondur.<br><br>
+>>>np.eye(5)<br>
+array([[1., 0., 0., 0., 0.],<br>
+       [0., 1., 0., 0., 0.],<br>
+       [0., 0., 1., 0., 0.],<br>
+       [0., 0., 0., 1., 0.],<br>
+       [0., 0., 0., 0., 1.]])<br>
+</div>
+<hr>
+</p>
+<br>
+
+
+
+<h3>Matematiksel  İşlemler= min(),max()</h3>
+<p>
+<hr>
+<div class ="jumbotron">
+>>>array = np.array([12,15,20,8])<br>
+>>>array.min()<br>
+8<br>
+
+<br>
+>>>array = np.array([12,15,20,8])<br>
+>>>array.max()<br>
+20<br>
+
+>>>array = np.array([12,15,20,8])<br>
+>>>array.sum()<br>
+55<br>
+</div>
+<hr>
+</p>
+<br>
+
+
+<h3>Ortalama Hesaplama=mean(), median(), var(),std() </h3>
+<p>
+<hr>
+<div class ="jumbotron">
+>>>array = np.array([0,1, 2, 3, 4, 5, 6, 7, 8, 9])<br>
+>>>array.mean()<br>
+4.5
+<br><br>
+>>>np.median(array)<br>
+4.5
+<br><br>
+>>>array.var()<br>
+8.25<br><br>
+>>>array.std()<br>
+2.8722813232690143
+<br>
+</div>
+<hr>
+</p>
+<br>
+
+
+
+<h3>Aritmetiksel İşlemler</h3>
+<p>
+<hr>
+Matrislerden hatırlayacağımız üzere toplama, çıkarma vb. işlemler yapabilmek için işlem yapılacak matrislerin satır ve sütun sayılarının eşit olması gerekiyordu.<br>
+<div class ="jumbotron">
+array = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9])<br>
+array.reshape(3,3)<br>
+>>>array
+[[1 2 3]<br>
+ [4 5 6] <br>
+ [7 8 9]]<br><br>
+
+
+array + array<br>
+[[ 2  4  6] <br>
+ [ 8 10 12] <br>
+ [14 16 18]]<br><br>
+
+
+array - array<br>
+[[0 0 0] <br>
+ [0 0 0] <br>
+ [0 0 0]]<br><br>
+
+array * array<br>
+[[ 1  4  9] <br>
+ [16 25 36] <br>
+ [49 64 81]]<br>
+<br>
+
+
+array / array<br>
+[[1  1  1]<br>
+ [1  1  1]<br>
+ [1  1  1]]<br><br>
+
+array + 5<br>
+[[ 6  7  8] <br>
+ [ 9 10 11] <br>
+ [12 13 14]]<br><br>
+
+array * 2<br>
+[[ 2  4  6] <br>
+ [ 8 10 12] <br>
+ [14 16 18]] <br><br>
+</P>
+</div>
+
+<h3>İleri seviye trigonometrik, logaritmik   fonksiyonlar 'la  nasıl çalışılır? </h3>
+<p>
+<hr>
+<div class ="jumbotron">
+>>>array = np.array([1, 2, 3, 4, 5, 6])<br>
+>>>np.sin(array)<br>
+array([ 0.84147098,<br>  0.90929743, <br>  0.14112001,<br>  -0.7568025 ,<br>  -0.95892427,<br> 
+       -0.2794155 ])
+<br><br>
+>>>np.cos(array)<br>
+([ 0.54030231,<br> -0.41614684,<br> -0.9899925 ,<br>-0.65364362, <br> 0.28366219,<br>
+
+        0.96017029])
+<br><br>
+>>>np.sqrt(array)<br>
+([1.        , 1.41421356,<br> 1.73205081,<br>2. <br> 2.23606798,<br>
+       2.44948974])<br><br>
+>>>np.exp(array)<br>
+([  2.71828183,   <br> 7.3890561 , <br>  20.08553692,<br>   54.59815003,<br> 
+       148.4131591 ,<br>  403.42879349])
+<br><br>
+>>>np.log(array)<br>
+([0.        ,<br> 0.69314718,<br> 1.09861229,<br> 1.38629436,<br>1.60943791,<br>
+       1.79175947])<br>
+</div>
+<hr>
+</p>
+
+
+
+<h3>Ortalama Hesaplama=mean(), median(), var(),std() </h3>
+<p>
+<hr>
+<div class ="jumbotron">
+>>>array = np.array([0,1, 2, 3, 4, 5, 6, 7, 8, 9])<br>
+>>>array1 = numpy_array.reshape(5,2)<br>
+>>>array2 = numpy_array.reshape(2,5)<br>
+>>>print(np.dot(array1,narray2))<br><br>
+[[  5   6   7   8   9] <br>
+ [ 15  20  25  30  35] <br>
+ [ 25  34  43  52  61] <br>
+ [ 35  48  61  74  87] <br>
+ [ 45  62  79  96 113]]
+<br><br>
+
+</div>
+<hr>
+</p>
+<br>
+
+
+
+<h3>Koşullu ifadelerle çalışmak</h3>
+<p>
+<hr>
+<div class ="jumbotron">
+>>>array = np.array([1, 2, 3, 4, 5, 6, 7, 8])<br>
+>>>boolean = array >= 5
+>>>boolean<br><br>
+array([False, False, False, False,  True,  True,  True,  True])<br>
+
+<br><br>
+
+</div>
+<hr>
+</p>
+<br><br><br><br>
+
+
+<p>Pythonda'ki diğer konuları görmek için &nbsp;<a href="/Python">Python</a> adresine gidin</p>
+
+<br><br><br><br><br><br><br><br><br>
+</font>
+</div>
+{% endblock body %}

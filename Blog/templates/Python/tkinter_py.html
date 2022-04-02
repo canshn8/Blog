@@ -1,0 +1,149 @@
+{% extends "desinger.html" %}
+
+{% block body %}
+<div style = "margin-top: px50;" class = "container">
+<font size="5">
+<h1></h1>
+<br>
+<h3>Tkinter Nedir.</h3>
+<br>
+<hr>
+Grafik Kullanıcı Arayüzüne (GUI) sahip bir Python uygulaması mı geliştirmek istiyorsunuz?<br> Bunu yapmanıza yardımcı olmak için tasarlanmış çeşitli paketler vardır (aslında, sadece Python GUI paketlerinin ilk on listesini yapabiliriz). <br>Ancak çoğu Python geliştiricisinin, GUI oluşturmak için Tkinter’in en önemli ve en yaygın kullanılan çerçeve olduğu konusunda hemfikir olacağını düşünüyorum. <br>Python’u hemen hemen her modern işletim sisteminde çalışan TK GUI araç setine bağlar.<br>
+Farklı bir GUI araç takımı için güçlü bir tercihiniz yoksa, Tkinter muhtemelen bir Python GUI oluştururken başlamak için en iyi yerdir.<br>
+
+Python<br>
+
+Tkinter Nedir ? : Python ile Arayüz Tasarlama<br>
+Bu yazıda Tkinter kütüphanesini inceleyeceğiz.<br>
+ <br><br>
+Tkinter Nedir ? : Python ile Arayüz Tasarlama<br>
+Tkinter Nedir?<br>
+
+Tkinter ile Neler yapılır<br>
+
+Tkinter Öğrenelim<br>
+
+Pencere Açmak<br>
+Buton<br>
+Entry<br>
+Label<br>
+Basit Bir uygulama<br>
+Tkinter Nedir <br>
+Tkinter, Python'un fiili standart GUI (Grafik Kullanıcı Arayüzü) paketidir. Yani Tkinter bir python kütüphanesidir.<br>
+
+Windows, diğer tüm GUI öğelerinin içinde bulunduğu kapsayıcılardır. Metin kutuları, etiketler ve düğmeler gibi bu diğer GUI öğeleri widget olarak bilinir . Widget'lar pencerelerin içinde bulunur.<br>
+
+Kısacası bu şekilde açıklamış olabiliriz.<br>
+
+<br>
+Tkinter ile Neler yapılır<br>
+Tkinter dediğimiz gibi basit bir GUI geliştirme modülüdür. Python da Tkinter kullanarak basit GUI uygulamaları yazabiliriz. <br>
+
+Bu kütüphane aslında pythonda algoritma geliştirme ve GUI uygulamalarına basit düzeyde girmek için kullanılır. Eğer pythonda daha profosyenel birşeyler yazmak istiyorsanız Pyqt5  kütüphanesinin daha detaylı ve iyi olduğunu söyleyebiliriz.<br>
+
+Tkinter ile pythonda;<br>
+
+Hesap makinesi ve tarzı, Yılan oyunu, Tetris ve tüm widgetları kullanarak giriş seviyesinde harika şeyler yapabilirsiniz.<br>
+<br>
+
+
+Tkinter Öğrenelim<br>
+Şimdi Tkinter kütüphanesinde widgetları ve arayüz tasarlamayı öğrenelim<br>
+
+Pencere Açmak<br>
+
+<div class ="jumbotron">
+from tkinter import *<br>
+
+pencere=Tk()
+<br>
+mainloop()<br>
+</div >
+Bu kısımda ilk önce Tkinter kütüphanesini çağırıyoruz.<br>
+
+Ardından Tk() sınıfından pencere adlı bir obje üretiyoruz.<br>
+
+Ve kodun sınırsız döngü olarakçalışması için mainloop() yazıyoruz.<br>
+<br>
+<h4>Buton oluşturma</h4>
+<div class = "jumbotron">
+from tkinter import *<br>
+
+pencere = Tk()<br>
+
+
+def clicked():<br>
+    print("tıklanıldı")<br>
+
+buton1 = Button(pencere)<br>
+buton1.config(text="Tıkla", bg="yellow", fg="black", command=clicked)<br>
+buton1.pack()<br>
+mainloop()<br>
+</div>
+Bu kodda öncelikle sayfamızı tanımladıktan sonra buton1 adında bir buton oluşturduk. Tkinterda Buton oluşturmak için bir değişkene Button(sayfa_adı) yazarak elde edebilirsiniz.<br>
+
+Ardından buton1.config diyerek butonumuzun özelliklerini doldurmaya başladık, text parametresi ile üzerinde yazacağı yazıyı, bg parametresi ile arkaplan rengini, fg parametresi ile de yazının rengini belirledikten sonra command parametresi ile de clicked adlı fonksiyona sinyal gönderdik. Clicked adlı fonksiyonun içresine ise ekrana tıklanıldı yazısını bastırdık.<br>
+
+Yani her butona tıklanıldığında ekrana "tıklanıldı" yazdıracak, çıktımız ise şöyle:<br><br>
+
+
+<h4>EntLabelry</h4>
+<div class = "jumbotron">
+<br>
+
+Label<br>
+from tkinter import *<br>
+
+pencere = Tk()<br>
+etiket=Label(pencere)<br>
+etiket.config(text="MertMekatronik.com",bg="green",font=("Vertana",24))<br>
+etiket.place(x=100,y=100)<br>
+mainloop()<br>
+</div>
+Label bildiğiniz gibi Türkçe de etiket demek. Tkinterda label tanımlamak için bir değişkene Label(pencere_adı) şeklinde yazarak tanımlıyoruz.<br>
+
+Daha sonra etiket.config üzerinden yazısını, arkaplan rengini ve font=(parametre1,parametre2) yazarak da Font ve boyutunu ayarlıyoruz. Burada 1.parametre font, 2.parametre ise boyutudur.<br>
+
+<h3> Basit Uygulama</h3>
+<div class ="jumbotron">
+Basit Bir uygulama<br>
+from tkinter import *<br>
+
+pencere = Tk()<br>
+
+def sign_in():<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;sifre=entry.get()<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;if sifre=="yazılım":<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  label.config(text="Giriş başarılı")<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  entry.destroy()<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  buton.destroy()<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;else:<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;print("yanlış giriş")<br><br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; label=Label(pencere)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; label.config(text="Şifrenizi giriniz",font=("Arial",20))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; label.place(x=20,y=20)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; entry=Entry(pencere)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; entry.place(x=20,y=70)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; buton=Button(pencere)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; buton.config(text="Giriş yap",bg="black",fg="white",command=sign_in)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; buton.place(x=20,y=100)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mainloop()<br>
+</div>
+
+Bu kodda bir log-in uygulaması yaptık. İlk olarak label, entry ve butonları tanımladıktan sonra butonu sinyal ile sign_in() fonksiyonun bağladık.<br>
+
+Fonksiyonun içerisinde sifre adlı bir değişken oluşturup entry1de ki text'i alıp içerisine attık. Ve eğer kullanıcın girmiş olduğu değer "yazılım" ise  entry ve butonu silip label'ın yazısını giriş başarılı şekilde değiştirmesini yazdık. Eğer eşit değil ise konsol ekranına yanlış giriş yazdırıyor.<br>
+
+
+<br><br><br><br>
+<p>Pythonda'ki diğer konuları görmek için &nbsp;<a href="/Python">Python</a> adresine gidin</p>
+
+<br><br><br><br><br><br><br>
+</font>
+</div>
+{% endblock body %}

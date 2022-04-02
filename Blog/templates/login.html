@@ -1,0 +1,29 @@
+{% extends "desinger.html" %}
+
+{% block body %}
+{%from  "includes/formhelpers.html" import render_field%}
+<div style ="margin-top: 50px;" class="container">
+
+<h2>Giriş Yap</h2>
+<hr>
+
+
+
+
+
+
+<form method ="post">
+    
+    
+    <h4>{{ render_field(form.username) }}</h4>
+    <br>
+    <h4>{{ render_field(form.password) }}</h4>
+    <br>
+    <h4><p>Hesabın Yok mu? &nbsp;<a href="/register">Kayıt Ol</a></p></h4>
+    
+    <br>
+    <button type="submit" class="btn btn-primary">Giriş Yap </button>
+</div>
+</form>
+{% endblock body %}
+

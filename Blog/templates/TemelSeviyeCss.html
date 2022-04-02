@@ -1,0 +1,155 @@
+{% extends "desinger.html" %}
+
+{% block body %}
+<div style = "margin-top: 100px;" class =  "container">
+<font size = "6">
+<i>
+<h2>Css Koduna Genel Bakış</h2>
+<p>Bir CSS kodu iki temel bileşenden oluşur. Biri element ve stilleri birbirinden ayıran bir seçim. Diğeri ise bir ya da daha fazla özelliği bildirdiğimiz ifade bölümü.</p>
+<a href="https://imgyukle.com/f/2022/02/04/o4L2Ie.png" rel="lightbox" title="Örnek"><img src ="https://imgyukle.com/f/2022/02/04/o4L2Ie.png"></a>
+<p>Seçim genel olarak stilini belirleyeceğimiz HTML elementidir, h1, a, body, p gibi.
+
+İfadeler ise sürekli olarak özellik: değer; şeklinde { ve } işaretleri arasında sıralanırlar.</p>
+<br><br>
+<h2>Css Örneği</h2><br><br>
+<p>Bir css ifadesi her zaman noktalı virgül (;) ile biter. İfadeler bir kıvrımlı parantez içinde yer alır. Aşağıdaki örneğe bakalım:</p><br>
+<a href="https://imgyukle.com/f/2022/02/03/obyg3n.png" rel="lightbox" title="Örnek"><img src = "https://imgyukle.com/f/2022/02/03/obyg3n.png"></a>
+<br><br>
+<h2>Yorum Satırı</h2><br>
+<p>Yorum Satırı Koymak İçin "/* Yorum Satırı */"</p>
+<a href="https://imgyukle.com/f/2022/02/04/o4LIGh.png" rel="lightbox" title="Örnek"><img src ="https://imgyukle.com/f/2022/02/04/o4LIGh.png"></a>
+<br><br>
+
+<h2>CSS ID ve Class Seçimi</h2>
+<br>
+<p>HTML elementleri için stiller belirleyebildiğiniz gibi size özel stiller belirleyip elementlerin "id" ve "class" özelliklerinde bu stili belirterek de kullanabilirsiniz.</p>
+<br>
+
+<h2>Class Kullanımı</h2>
+<br>
+<p>
+Bir HTML kaynağına baktığınızda bir element (tag) özelliği olarak class="stil" şeklinde bir özellik belirtildiğini görebilirsiniz. Peki neden buna gerek duymuşlar? Örneğin aşağıdaki HTML kodunu inceleyelim:
+</p>
+<hr>
+<a href="https://imgyukle.com/f/2022/02/04/o4Npzy.png" rel="lightbox" title="Örnek"><img src ="https://imgyukle.com/f/2022/02/04/o4Npzy.png"></a>
+<hr>
+
+<p>
+<br>
+Yukarıdaki div elementi içinde yer alan class="stil", o div elementi için CSS özellikleri belirtmemizi sağlayan bir yoldur. CSS dosyamızda şu şekilde bir ifade varsa:
+</p>
+<hr>
+<a href = "https://imgyukle.com/f/2022/02/04/o4N2WU.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o4N2WU.png"></a>
+<hr>
+<br>
+
+<p>
+Nokta (.) ile başlayan bir stil oluşturduk ve adını biz verdik. Bu demektir ki class="stil" ile belirttiğimiz tüm elementler 10 punto Tahoma yazı tipinde ve mavi (blue) renginde olacaktır. Tabi istersek sadece tek bir elementte geçerli olmasını sağlayabiliriz. Örneğin sadece DIV elementlerinde geçerli olmasını istiyorsak:
+</p>
+<a href ="https://imgyukle.com/f/2022/02/04/o4OOw1.png" rek ="lightbox" title = "örnek"><img src = "https://imgyukle.com/f/2022/02/04/o4OOw1.png"></a>
+<br><br>
+
+
+<p>
+".stil" yani seçim adımızın başına div getirmemiz yeterli olacaktır. Bu durumda bu CSS kodu sadece DIV elementlerinde kullanılabilir olacaktır.
+
+CLASS özelliği kullanmanın bize sağlayacağı yararlara şöyle bir bakalım:
+
+<ul>
+<li>Kendimizin adlandırdığı özel stiller yaratmak ve kullanmak
+<li>Bir stili birden fazla elementte kullanabilmek
+<li>Stillere CSS de yer verip HTML kodlarımızı sürekli tekrarlanan uzun CSS kodlarından arındırmak
+</ul>
+
+</p>
+<br><br>
+<h2>ID Kullanımı</h2><br>
+<p>ID özelliği ile de stiller yaratabiliriz. CLASS'tan farklı yanları:</p>
+<ul>
+<li>Sadece tek bir elementte kullanılabilir.
+<li>Aynı id değeri iki elemente verilemez (Her id sadece tek bir elementte kullanılabilir).
+<li>Stil dosyamızda CLASS'da . (nokta) kullanırdık, ancak id özelliğine göre stilleme yapacaksak # (diyez) kullanırız.
+</ul><br>
+Şimdi bu anlattıklarımızı örnek üzerinde görelim:
+<br><br>
+<a href ="https://imgyukle.com/f/2022/02/04/o4XuV8.png" rek = "lightbox" title ="Örnek"><img src ="https://imgyukle.com/f/2022/02/04/o4XuV8.png"></a>
+<br><br>
+<p>
+Örnekte ID değeri "stil" olan bir DIV elementi görüyoruz. CSS dosyamızda bu elemente özel stil tasarlarken aşağıdaki şekilde kod yapısını oluşturmalıyız:
+</p>
+<a href ="https://imgyukle.com/f/2022/02/04/o4XqXY.png" rek ="lightbox" title ="Örnek"><img src ="https://imgyukle.com/f/2022/02/04/o4XqXY.png"></a>
+<br><br>
+
+<p>
+Görüldüğü gibi bu kez diyez (#) ile başlattık. Sadece tek bir elemente özel stil tasarlamış olduk (Neden? Çünkü başka bir elementte yine id değeri "stil" belirtilemez.)
+Ayrıca unutmadan söyleyelim hiçbir ID değeri rakamla başlamaz. ID, HTML dosyasında o elementi bulmamızı sağlar, bu nedenle aynı ismi veremeyiz. Aynı ismi vermemizin diğer yaratacağı sorun Java Script'te bu elementi id özelliğine göre kullanamamak olacaktır. Son olarak bazı tarayıcılar birden fazla aynı id kullanılan HTML dosyalarında stilleri görmezden gelebilir.
+</p>
+
+
+<h3>CSS Nasıl Eklenir?</h3>
+<p>
+Bir tarayıcı açıldığı zaman stilleri okur ve o stilin kullanıldığı HTML elementlerini belirtilen özelliklere göre şekillendirir.
+
+Üç şekilde sayfamıza stil ekleyebiliriz. Bunlar:
+</p>
+<br><br>
+<ul>
+<li>Stilleri CSS Dosyasından Çağırmak
+<li>HTML Sayfasında CSS Yazmak
+<li>HTML Elementinin İçerisinde Stil Belirtmek
+</ul>
+
+
+<h2> Stilleri CSS Dosyasından Çağırmak</h2>
+<br>
+<p>
+Öncelikle bir not defteri ya da CSS düzenleyici program açmalısınız.
+
+CSS Kodlarınızı CSS Kod Yapısı'na uygun olarak yazın ve kaydedin.
+
+HTML Sayfanızı açıp <"head"> ile <"/head"> arasına aşağıdaki şekilde stil dosyanızın adını belirtin.
+</p>
+<br>
+<hr>
+<a href ="https://imgyukle.com/f/2022/02/04/o4cXxp.png" rek = "lightbox" title = "Örnek"><img src = "https://imgyukle.com/f/2022/02/04/o4cXxp.png"></a>
+<hr>
+<br>
+
+<p>
+href="DOSYA_ADI" ile belirttiğimiz yerde bizim kaydettiğimiz dosyanın adı yer almalı ve HTML sayfası ile CSS dosyası aynı klasörde bulunmalıdır. Farklı bir klasörde kullanmak istiyorsak HTML sayfasına göre konumu yazmamız gereklidir.
+Dosya adını doğru yazdıysak artık CSS dosyamızı HTML sayfamıza bağladık demektir. Yani CSS dosyamızdaki stilleri rahatlıkla HTML sayfamızda kullanabiliriz.
+</p>
+<br>
+
+<h2>HTML Sayfasında CSS Yazmak</h2>
+
+<p>HTML sayfamızda HEAD elementlerinin arasında STYLE elementi kullanarak stiller yaratmamız mümkün. Aşağıdaki örneğe bakalım:</p>
+<br>
+<a href ="https://imgyukle.com/f/2022/02/04/o4cbGR.png" rek = "lightbox" title = "Örnek"><img src ="https://imgyukle.com/f/2022/02/04/o4cbGR.png"></a><br>
+Örneğe baktığımızda <"style type="text/css"> elementini "HEAD" elementi içinde açıp kapatıyor ve içine stillerimizi yazıyoruz. Böylelikle dosyamızda belirttiğimiz stiller dışarıdan bir dosyaya bağlı olmaksızın kullanılabilir olacaklar.
+</p>
+<br><br>
+
+<h2> HTML Elementinin İçerisinde Stil Belirtmek</h2><br>
+<p>
+Bazen stil dosyası ya da STYLE elementi kullanmadan hızlı çözümler üretmek gerekebilir. Böyle durumlarda her elementin style="" özelliği kullanıma hazırdır. CSS kodlarını element içinde açacağımız STYLE özelliğine sıralarız. Örneğin;
+</p>
+<a href = "https://imgyukle.com/f/2022/02/04/o4gCNj.png" rek = "lightbox" title = "Örnek"><img src ="https://imgyukle.com/f/2022/02/04/o4gCNj.png"></a>
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br>
+</i>
+</font>
+</div>
+{% endblock body %}
+
+
